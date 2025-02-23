@@ -1,0 +1,742 @@
+<html><head><base href="." /><link href="https://fonts.googleapis.com/css2?family=MS+Sans+Serif:wght@400&display=swap" rel="stylesheet"><style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background: #008080;
+    font-family: 'MS Sans Serif', sans-serif;
+    overflow: hidden;
+}
+
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: url('https://i.imgur.com/7vDkfaV.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 28px;
+    background: #c0c0c0;
+    border-top: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: space-between;
+}
+
+.clock {
+    padding: 2px 8px;
+    border: 1px solid #808080;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    margin-right: 2px;
+    font-size: 12px;
+}
+
+.start-button {
+    display: flex;
+    align-items: center;
+    background: #c0c0c0;
+    border: 1px solid #000;
+    padding: 2px 6px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.start-button:active {
+    border: 1px solid #808080;
+    border-top-color: #000;
+    border-left-color: #000;
+}
+
+.start-menu {
+    position: fixed;
+    bottom: 28px;
+    left: 0;
+    width: 200px;
+    background: #c0c0c0;
+    border: 1px solid #000;
+    display: none;
+    box-shadow: 1px 1px 0 white inset, -1px -1px 0 #707070 inset;
+}
+
+.start-menu-item {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.start-menu-item:hover {
+    background: #000080;
+    color: white;
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    float: left;
+}
+
+.icon img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+}
+
+.window {
+    position: absolute;
+    background: #c0c0c0;
+    border: 1px solid #000;
+    min-width: 200px;
+    min-height: 150px;
+    box-shadow: 1px 1px 0 white inset, -1px -1px 0 #707070 inset;
+    display: none;
+}
+
+.title-bar {
+    background: #000080;
+    color: white;
+    padding: 3px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+    background: #c0c0c0;
+    border: 1px solid #000;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.window-content {
+    padding: 10px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 10px;
+}
+
+.game-cell {
+    width: 30px;
+    height: 30px;
+    background: #c0c0c0;
+    border: 2px outset #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.browser-bar {
+    padding: 5px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #808080;
+}
+
+.browser-input {
+    width: 100%;
+    padding: 2px;
+    margin-top: 5px;
+}
+
+.my-computer {
+    display: block;
+}
+
+@keyframes highlight {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#ao-avatar svg {
+    transition: transform 0.3s;
+}
+
+#ao-avatar:hover svg {
+    transform: scale(1.1);
+}
+
+#chat-container::-webkit-scrollbar {
+    width: 16px;
+}
+
+#chat-container::-webkit-scrollbar-track {
+    background: #c0c0c0;
+    border: 1px inset #fff;
+}
+
+#chat-container::-webkit-scrollbar-thumb {
+    background: #808080;
+    border: 1px outset #fff;
+}
+
+#user-input {
+    font-family: 'MS Sans Serif', sans-serif;
+    border: 1px inset #fff;
+}
+
+#ao-buddy .window-content button {
+    font-family: 'MS Sans Serif', sans-serif;
+    background: #c0c0c0;
+    border: 1px outset #fff;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+#ao-buddy .window-content button:active {
+    border: 1px inset #fff;
+}
+
+.blink {
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+</style></head><body>
+<div class="desktop">
+    <div class="icon" onclick="openWindow('my-computer')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="4" y="6" width="24" height="20" fill="#c0c0c0" stroke="#000"/>
+            <rect x="8" y="2" width="16" height="12" fill="#fff" stroke="#000"/>
+            <circle cx="16" cy="18" r="6" fill="#008080" stroke="#000"/>
+        </svg>
+        <div>My Computer</div>
+    </div>
+
+    <div class="icon" onclick="openWindow('control-panel')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="4" y="4" width="24" height="24" fill="#c0c0c0" stroke="#000"/>
+            <circle cx="16" cy="16" r="8" fill="#008080" stroke="#000"/>
+            <rect x="14" y="8" width="4" height="16" fill="#000"/>
+            <rect x="8" y="14" width="16" height="4" fill="#000"/>
+        </svg>
+        <div>Control Panel</div>
+    </div>
+
+    <div class="icon" onclick="openWindow('notepad')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="6" y="2" width="20" height="28" fill="#fff" stroke="#000"/>
+            <line x1="10" y1="8" x2="22" y2="8" stroke="#000"/>
+            <line x1="10" y1="13" x2="22" y2="13" stroke="#000"/>
+            <line x1="10" y1="18" x2="22" y2="18" stroke="#000"/>
+        </svg>
+        <div>Notepad</div>
+    </div>
+
+    <div class="icon" onclick="openWindow('explorer')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="2" y="6" width="28" height="20" fill="#fff" stroke="#000"/>
+            <rect x="4" y="8" width="6" height="16" fill="#c0c0c0" stroke="#000"/>
+            <rect x="12" y="8" width="16" height="16" fill="#fff" stroke="#000"/>
+        </svg>
+        <div>Explorer</div>
+    </div>
+
+    <div class="icon" onclick="openWindow('games')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="4" y="4" width="24" height="24" fill="#c0c0c0" stroke="#000"/>
+            <circle cx="16" cy="16" r="8" fill="#ff0000" stroke="#000"/>
+            <rect x="12" y="12" width="8" height="8" fill="#ffff00"/>
+        </svg>
+        <div>Games</div>
+    </div>
+
+    <div class="icon" onclick="openWindow('browser')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="14" fill="#0000ff" stroke="#000"/>
+            <text x="16" y="22" text-anchor="middle" fill="white" style="font-size: 20px;">e</text>
+        </svg>
+        <div>Browser</div>
+    </div>
+
+    <div class="icon" onclick="openWindow('ao-buddy')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="14" fill="#ffff00" stroke="#000"/>
+            <circle cx="12" cy="12" r="2" fill="#000"/>
+            <circle cx="20" cy="12" r="2" fill="#000"/>
+            <path d="M10 20 Q16 24 22 20" stroke="#000" fill="none" stroke-width="2"/>
+        </svg>
+        <div>A-O Buddy</div>
+    </div>
+
+    <div class="icon" onclick="openWindow('paint')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="4" y="4" width="24" height="24" fill="#c0c0c0" stroke="#000"/>
+            <path d="M8 8h16v4h-16z" fill="#ff0000"/>
+            <path d="M8 14h16v4h-16z" fill="#00ff00"/>
+            <path d="M8 20h16v4h-16z" fill="#0000ff"/>
+        </svg>
+        <div>Paint</div>
+    </div>
+
+    <div class="icon" onclick="openWindow('calculator')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="6" y="4" width="20" height="24" fill="#c0c0c0" stroke="#000"/>
+            <rect x="8" y="6" width="16" height="6" fill="#fff" stroke="#000"/>
+            <rect x="8" y="14" width="4" height="4" fill="#fff" stroke="#000"/>
+            <rect x="14" y="14" width="4" height="4" fill="#fff" stroke="#000"/>
+            <rect x="20" y="14" width="4" height="4" fill="#fff" stroke="#000"/>
+            <rect x="8" y="20" width="4" height="4" fill="#fff" stroke="#000"/>
+        </svg>
+        <div>Calculator</div>
+    </div>
+
+    <div class="icon" onclick="openWindow('terminal')">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="4" y="4" width="24" height="24" fill="#000" stroke="#c0c0c0"/>
+            <text x="8" y="20" fill="#00ff00" style="font-size: 14px;">C:\</text>
+        </svg>
+        <div>MS-DOS</div>
+    </div>
+
+    <div class="window" id="my-computer">
+        <div class="title-bar">
+            <div>My Computer</div>
+            <button class="close-button" onclick="closeWindow('my-computer')">×</button>
+        </div>
+        <div class="window-content">
+            Welcome to Windows '97 Beta!
+            <br><br>
+            This version includes experimental features.
+            <br>
+            Some features may not work as expected.
+        </div>
+    </div>
+
+    <div class="window" id="control-panel">
+        <div class="title-bar">
+            <div>Control Panel</div>
+            <button class="close-button" onclick="closeWindow('control-panel')">×</button>
+        </div>
+        <div class="window-content">
+            <h3>Control Panel (Beta)</h3>
+            <br>
+            <div class="start-menu-item">Display Settings</div>
+            <div class="start-menu-item">System Properties</div>
+            <div class="start-menu-item">Add/Remove Programs</div>
+            <div class="start-menu-item">Network Settings</div>
+        </div>
+    </div>
+
+    <div class="window" id="notepad">
+        <div class="title-bar">
+            <div>Notepad</div>
+            <button class="close-button" onclick="closeWindow('notepad')">×</button>
+        </div>
+        <div class="window-content">
+            <textarea style="width: 300px; height: 200px; resize: none;">Welcome to Windows '97 Notepad Beta!
+
+This is a simplified version of the text editor.</textarea>
+        </div>
+    </div>
+
+    <div class="window" id="explorer">
+        <div class="title-bar">
+            <div>Explorer</div>
+            <button class="close-button" onclick="closeWindow('explorer')">×</button>
+        </div>
+        <div class="window-content">
+            <div style="display: flex;">
+                <div style="width: 100px; border-right: 1px solid #000; padding-right: 10px;">
+                    <div class="start-menu-item">Desktop</div>
+                    <div class="start-menu-item">My Documents</div>
+                    <div class="start-menu-item">Network</div>
+                </div>
+                <div style="padding-left: 10px;">
+                    <p>No items to display</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="games" style="width: 300px;">
+        <div class="title-bar">
+            <div>Games</div>
+            <button class="close-button" onclick="closeWindow('games')">×</button>
+        </div>
+        <div class="window-content">
+            <h3>Minesweeper '97</h3>
+            <div class="game-grid" id="minesweeper">
+                <!-- Grid will be filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="browser" style="width: 400px;">
+        <div class="title-bar">
+            <div>Internet Explorer 3.0 Beta</div>
+            <button class="close-button" onclick="closeWindow('browser')">×</button>
+        </div>
+        <div class="window-content">
+            <div class="browser-bar">
+                <button onclick="alert('Not implemented in beta')">Back</button>
+                <button onclick="alert('Not implemented in beta')">Forward</button>
+                <button onclick="alert('Not implemented in beta')">Refresh</button>
+                <input type="text" class="browser-input" placeholder="Enter URL..." value="https://www.windows97.com">
+            </div>
+            <div style="padding: 10px;">
+                <h2>Welcome to the World Wide Web!</h2>
+                <p>This is Internet Explorer 3.0 Beta</p>
+                <p>Some features are still under development.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="ao-buddy" style="width: 300px;">
+        <div class="title-bar">
+            <div>A-O Buddy</div>
+            <button class="close-button" onclick="closeWindow('ao-buddy')">×</button>
+        </div>
+        <div class="window-content">
+            <div id="ao-container" style="display: flex; align-items: center; margin-bottom: 10px;">
+                <div id="ao-avatar" style="margin-right: 10px;">
+                    <svg width="64" height="64" viewBox="0 0 32 32">
+                        <circle cx="16" cy="16" r="14" fill="#ffff00" stroke="#000"/>
+                        <circle cx="12" cy="12" r="2" fill="#000"/>
+                        <circle cx="20" cy="12" r="2" fill="#000"/>
+                        <path id="ao-mouth" d="M10 20 Q16 24 22 20" stroke="#000" fill="none" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div id="ao-speech-bubble" style="background: #fff; padding: 10px; border: 1px solid #000; border-radius: 10px; position: relative;">
+                    Hi! I'm A-O, your Windows '97 buddy! Ask me anything about Windows '97!
+                </div>
+            </div>
+            <div id="chat-container" style="height: 200px; overflow-y: auto; border: 1px inset #fff; background: white; padding: 5px; margin: 5px 0;">
+            </div>
+            <div style="display: flex; gap: 5px;">
+                <input type="text" id="user-input" style="flex-grow: 1; padding: 3px;" placeholder="Ask A-O anything...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+            <div style="border-top: 1px solid #808080; padding-top: 10px; margin-top: 10px;">
+                <button onclick="startTutorial()" style="width: 100%; margin-bottom: 5px;">Start Tutorial</button>
+                <button onclick="showFeatures()" style="width: 100%; margin-bottom: 5px;">Show Features</button>
+                <button onclick="exploreApps()" style="width: 100%; margin-bottom: 5px;">Explore Apps</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="tour" style="width: 400px;">
+        <div class="title-bar">
+            <div>Windows '97 Tour</div>
+            <button class="close-button" onclick="closeWindow('tour')">×</button>
+        </div>
+        <div class="window-content">
+            <h3>Welcome to Windows '97 Tour!</h3>
+            <div style="margin: 10px 0;">
+                <p>• Click Start to access programs and settings</p>
+                <p>• Use My Computer to browse files</p>
+                <p>• Control Panel lets you customize Windows</p>
+                <p>• Try our new Internet Explorer 3.0 Beta</p>
+                <p>• Meet A-O, your Windows Guide!</p>
+            </div>
+            <button onclick="startTutorial()">Start Interactive Tour</button>
+        </div>
+    </div>
+
+    <div class="window" id="profile" style="width: 350px;">
+        <div class="title-bar">
+            <div>User Profile</div>
+            <button class="close-button" onclick="closeWindow('profile')">×</button>
+        </div>
+        <div class="window-content">
+            <h3>Windows '97 User Profile</h3>
+            <div style="margin: 10px 0;">
+                <p><strong>Username:</strong> User</p>
+                <p><strong>Computer Name:</strong> WIN97-PC</p>
+                <p><strong>Windows Version:</strong> Windows '97 Beta</p>
+                <p><strong>Install Date:</strong> <script>document.write(new Date().toLocaleDateString())</script></p>
+            </div>
+            <div style="border-top: 1px solid #808080; padding-top: 10px;">
+                <p><strong>System Status:</strong> Beta Testing</p>
+                <p><strong>Updates:</strong> Not Available</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="paint" style="width: 400px; height: 300px;">
+        <div class="title-bar">
+            <div>Paint Beta</div>
+            <button class="close-button" onclick="closeWindow('paint')">×</button>
+        </div>
+        <div class="window-content">
+            <div style="padding: 5px;">
+                <button>Pencil</button>
+                <button>Brush</button>
+                <button>Color</button>
+            </div>
+            <div style="background: #fff; height: 200px; border: 1px inset #fff; margin: 5px;">
+                <center style="padding-top: 80px;">Paint Beta - Coming Soon</center>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="calculator">
+        <div class="title-bar">
+            <div>Calculator</div>
+            <button class="close-button" onclick="closeWindow('calculator')">×</button>
+        </div>
+        <div class="window-content" style="padding: 10px;">
+            <input type="text" style="width: 100%; margin-bottom: 10px; text-align: right;" readonly value="0">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px;">
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>/</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>*</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>-</button>
+                <button>0</button>
+                <button>.</button>
+                <button>=</button>
+                <button>+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="terminal">
+        <div class="title-bar">
+            <div>MS-DOS Prompt</div>
+            <button class="close-button" onclick="closeWindow('terminal')">×</button>
+        </div>
+        <div class="window-content" style="background: #000; color: #00ff00; padding: 10px; font-family: monospace;">
+            <p>Microsoft(R) Windows 97(TM) MS-DOS(R) Mode</p>
+            <p>Beta Version</p>
+            <p>C:\WINDOWS>&nbsp;<span class="blink">_</span></p>
+        </div>
+    </div>
+
+    <div class="taskbar">
+        <div class="start-button" onclick="toggleStartMenu()">
+            <svg width="16" height="16" viewBox="0 0 16 16">
+                <rect width="16" height="16" fill="#c0c0c0"/>
+                <rect x="2" y="2" width="12" height="12" fill="#008080"/>
+                <rect x="4" y="4" width="8" height="8" fill="#00ff00"/>
+            </svg>
+            Start
+        </div>
+        <div class="start-menu" id="start-menu">
+            <div class="start-menu-item" onclick="openWindow('tour')">Quick Tour</div>
+            <div class="start-menu-item" onclick="openWindow('profile')">User Profile</div>
+            <div class="start-menu-item" onclick="openWindow('games')">Games</div>
+            <div class="start-menu-item" onclick="openWindow('browser')">Internet</div>
+            <div class="start-menu-item" onclick="openWindow('paint')">Paint</div>
+            <div class="start-menu-item" onclick="openWindow('calculator')">Calculator</div>
+            <div class="start-menu-item" onclick="openWindow('terminal')">MS-DOS Prompt</div>
+            <div class="start-menu-item">Programs (Beta)</div>
+            <div class="start-menu-item" onclick="openWindow('control-panel')">Settings</div>
+            <div class="start-menu-item">Find</div>
+            <div class="start-menu-item">Help</div>
+            <div class="start-menu-item">Run...</div>
+            <div class="start-menu-item">Shut Down...</div>
+        </div>
+        <div class="clock" id="clock">00:00</div>
+    </div>
+</div>
+
+<script>
+function openWindow(id) {
+    const window = document.getElementById(id);
+    if (!window) {
+        console.warn(`Window with id "${id}" not found`);
+        return;
+    }
+    
+    window.style.display = 'block';
+    
+    // Center the window on screen
+    const screenWidth = document.documentElement.clientWidth;
+    const screenHeight = document.documentElement.clientHeight;
+    const windowWidth = window.offsetWidth;
+    const windowHeight = window.offsetHeight;
+    
+    window.style.left = Math.max(0, Math.floor((screenWidth - windowWidth) / 2)) + 'px';
+    window.style.top = Math.max(0, Math.floor((screenHeight - windowHeight) / 3)) + 'px';
+
+    // Make window draggable
+    const titleBar = window.querySelector('.title-bar');
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+
+    function dragStart(e) {
+        if (e.target.classList.contains('close-button')) return;
+        initialX = e.clientX - window.offsetLeft;
+        initialY = e.clientY - window.offsetTop;
+        isDragging = true;
+    }
+
+    function drag(e) {
+        if (isDragging) {
+            e.preventDefault();
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+            
+            // Keep window within screen bounds
+            currentX = Math.max(0, Math.min(currentX, screenWidth - windowWidth));
+            currentY = Math.max(0, Math.min(currentY, screenHeight - windowHeight));
+            
+            window.style.left = currentX + 'px';
+            window.style.top = currentY + 'px';
+        }
+    }
+
+    function dragEnd(e) {
+        initialX = currentX;
+        initialY = currentY;
+        isDragging = false;
+    }
+
+    titleBar.addEventListener('mousedown', dragStart);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', dragEnd);
+}
+
+function closeWindow(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+function toggleStartMenu() {
+    const startMenu = document.getElementById('start-menu');
+    if (startMenu.style.display === 'block') {
+        startMenu.style.display = 'none';
+    } else {
+        startMenu.style.display = 'block';
+    }
+}
+
+// Close start menu when clicking outside
+document.addEventListener('click', function(e) {
+    const startMenu = document.getElementById('start-menu');
+    const startButton = document.querySelector('.start-button');
+    if (!startButton.contains(e.target) && !startMenu.contains(e.target)) {
+        startMenu.style.display = 'none';
+    }
+});
+
+// Clock update
+function updateClock() {
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('clock').textContent = timeStr;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// Minesweeper setup
+function setupMinesweeper() {
+    const grid = document.getElementById('minesweeper');
+    for (let i = 0; i < 16; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'game-cell';
+        cell.onclick = () => {
+            cell.style.border = '2px inset #fff';
+            cell.textContent = Math.floor(Math.random() * 2) ? '💣' : '1';
+        };
+        grid.appendChild(cell);
+    }
+}
+
+// Initialize everything
+document.addEventListener('DOMContentLoaded', () => {
+    setupMinesweeper();
+});
+
+// A-O Buddy functions
+async function sendMessage() {
+    const input = document.getElementById('user-input');
+    const message = input.value.trim();
+    if (!message) return;
+
+    // Add user message to chat
+    addMessageToChat('User', message);
+    input.value = '';
+
+    try {
+        const response = await fetch('/api/ai_completion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({
+                prompt: `You are A-O, the Windows '97 AI assistant. Respond to the user's question in a silly and fun way, 
+                while being helpful about Windows '97 features. Keep responses under 100 words and maintain a playful tone.
+                
+                User message: ${message}
+                
+                <typescript-interface>
+                interface Response {
+                    reply: string;
+                }
+                </typescript-interface>
+                
+                <example>
+                {
+                    "reply": "Oh boy, you want to know about the Internet? *bounces excitedly* Our super-fancy Internet Explorer 3.0 Beta can take you to the World Wide Web! Just click the 'e' icon or find it in the Start menu. But careful, it's still in beta so it might act a bit silly sometimes - just like me! 😄"
+                }
+                </example>`,
+                data: message
+            }),
+        });
+
+        const data = await response.json();
+        addMessageToChat('A-O', data.reply);
+        animateAOResponse();
+    } catch (error) {
+        console.error('Error getting AI response:', error);
+        addMessageToChat('A-O', "Beep boop! My beta circuits got a bit tangled! Try asking me something else!");
+    }
+}
+
+function addMessageToChat(sender, message) {
+    const chatContainer = document.getElementById('chat-container');
+    const messageDiv = document.createElement('div');
+    messageDiv.style.margin = '5px 0';
+    messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatContainer.appendChild(messageDiv);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function animateAOResponse() {
+    const mouth = document.getElementById('ao-mouth');
+    mouth.setAttribute('d', 'M10 18 Q16 22 22 18'); // Happy mouth
+    setTimeout(() => {
+        mouth.setAttribute('d', 'M10 20 Q16 24 22 20'); // Return to normal
+    }, 2000);
+}
+
+// Add event listener for Enter key in input
+document.getElementById('user-input')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+</script></body></html>

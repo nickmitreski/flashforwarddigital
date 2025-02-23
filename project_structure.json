@@ -1,0 +1,123 @@
+{
+  "modern_site": {
+    "core_styles": {
+      "src/modern/src/index.css": {
+        "purpose": "Main stylesheet for the modern site",
+        "contents": [
+          "Font imports (Fontello, Giest)",
+          "Tailwind directives",
+          "Custom animations",
+          "Core styles and resets",
+          "Section background styles",
+          "3D transform utilities",
+          "Glass card effects",
+          "Gradient animations",
+          "Shiny button effects"
+        ],
+        "key_features": [
+          "Gradient backgrounds",
+          "Particle effects support",
+          "Animation keyframes",
+          "Modern UI components"
+        ]
+      },
+      "src/modern/tailwind.config.js": {
+        "purpose": "Tailwind CSS configuration for modern site",
+        "contents": [
+          "Font family configurations",
+          "Content paths",
+          "Theme extensions"
+        ]
+      }
+    },
+    "component_styles": {
+      "location": "Embedded in component files",
+      "key_files": {
+        "src/modern/src/components/about.tsx": "About section with particles and gradients",
+        "src/modern/src/components/services.tsx": "Services section with cards and animations",
+        "src/modern/src/components/stats.tsx": "Stats section with animated counters",
+        "src/modern/src/components/contact.tsx": "Contact form with glass effects",
+        "src/modern/src/components/hero.tsx": "Hero section with text animations",
+        "src/modern/src/components/pricing.tsx": "Pricing section with hover effects"
+      }
+    }
+  },
+  "retro_site": {
+    "core_styles": {
+      "src/index.css": {
+        "purpose": "Main stylesheet for Windows 95 theme",
+        "contents": [
+          "Windows 95 color schemes",
+          "Base styles",
+          "Theme variables"
+        ]
+      },
+      "tailwind.config.ts": {
+        "purpose": "Tailwind configuration for retro theme",
+        "contents": [
+          "Windows 95 color palette",
+          "Animation configurations",
+          "Custom plugin setup"
+        ]
+      }
+    },
+    "vendor_styles": {
+      "src/designfolio/assets/bootstrap": {
+        "purpose": "Bootstrap customization for retro theme",
+        "files": {
+          "css/bootstrap.css": "Core Bootstrap styles",
+          "css/bootstrap-theme.css": "Theme overrides for Windows 95 look"
+        }
+      }
+    }
+  },
+  "shared": {
+    "configuration": {
+      "postcss.config.js": {
+        "purpose": "PostCSS configuration for both sites",
+        "plugins": [
+          "tailwindcss",
+          "autoprefixer"
+        ]
+      },
+      "components.json": {
+        "purpose": "Component library configuration",
+        "contents": [
+          "Styling preferences",
+          "Path aliases",
+          "Component configurations"
+        ]
+      }
+    }
+  },
+  "style_guide": {
+    "modern_site": {
+      "colors": {
+        "primary": "#008CFF",
+        "accent": "#7b2dbd",
+        "gradients": {
+          "primary": "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+          "buttons": "linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #ff6b6b)"
+        }
+      },
+      "animations": {
+        "fadeInUp": "0.8s ease-out",
+        "float": "6s ease-in-out infinite",
+        "gradientFlow": "15s ease infinite"
+      }
+    },
+    "retro_site": {
+      "colors": {
+        "win98": {
+          "gray": "#C0C0C0",
+          "blue": "#000080",
+          "borders": {
+            "light": "#FFFFFF",
+            "dark": "#808080",
+            "darker": "#404040"
+          }
+        }
+      }
+    }
+  }
+} 
