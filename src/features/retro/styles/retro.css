@@ -1,0 +1,112 @@
+/* Windows 95/98 Retro Styles */
+
+/* Desktop styles */
+.retro-desktop {
+  width: 100vw;
+  height: 100vh;
+  background-color: #008080;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Window styles */
+.win95-window {
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  position: absolute;
+  min-width: 200px;
+  min-height: 150px;
+}
+
+.win95-window-title {
+  background-color: #000080;
+  color: white;
+  padding: 2px 4px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.win95-window-content {
+  padding: 8px;
+}
+
+/* Button styles */
+.win95-button {
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 4px 8px;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  color: black;
+  cursor: pointer;
+}
+
+.win95-button:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+/* Taskbar styles */
+.win95-taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+/* Start button */
+.start-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  height: 22px;
+  font-weight: bold;
+}
+
+/* Desktop icons */
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.desktop-icon-label {
+  color: white;
+  text-align: center;
+  font-size: 11px;
+  margin-top: 4px;
+  text-shadow: 1px 1px 1px black;
+}
+
+/* Context menu */
+.context-menu {
+  position: fixed;
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 2px;
+  min-width: 150px;
+}
+
+.context-menu-item {
+  padding: 4px 20px;
+  cursor: pointer;
+}
+
+.context-menu-item:hover {
+  background-color: #000080;
+  color: white;
+} 

@@ -1,34 +1,24 @@
 import { useRef } from 'react'
 import { ChevronRight } from 'lucide-react'
-import bg3 from '../assets/3.png'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"]
-  })
-
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
 
   return (
-    <section ref={ref} id="hero" className="relative flex items-center justify-center min-h-screen overflow-hidden bg-black border-b border-[#008CFF]/30">
-      {/* Fixed Background with dark overlay */}
+    <section ref={ref} id="hero" className="relative flex items-center justify-center min-h-screen overflow-hidden bg-gray-100 border-b border-[#008CFF]/30">
+      {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
         style={{ 
-          backgroundImage: `url(${bg3})`,
-          backgroundAttachment: 'fixed'
+          backgroundImage: `url(/backgrounds/hero-bg.png)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
-      <motion.div 
-        className="absolute inset-0 bg-black/50"
-        style={{ opacity }}
-      /> {/* Dark overlay */}
-      
-      {/* Gradient Background */}
-      <div className="gradient-bg z-[2]" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50" />
       
       <div className="relative z-[5] w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
@@ -69,7 +59,7 @@ export function Hero() {
                     ease: [0.04, 0.62, 0.23, 0.98]
                   }}
                 >
-                  <span className="font-extralight">Content that</span> <span className="font-medium bg-gradient-to-r from-orange-400 via-pink-500 to-rose-600 bg-clip-text text-transparent gradient-animate">converts</span>.
+                  <span className="font-extralight">Content that</span> <span className="font-medium bg-gradient-to-r from-orange-400 via-[#FF1493] to-rose-600 bg-clip-text text-transparent gradient-animate">converts</span>.
                 </motion.div>
               </div>
               <div className="overflow-hidden">
@@ -94,12 +84,6 @@ export function Hero() {
               <ChevronRight className="ml-2 h-6 w-6" />
             </button>
           </div>
-        </div>
-        
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-1/4 left-1/4 w-96 h-96 bg-[#008CFF]/5 rounded-full blur-3xl animate-float" />
-          <div className="absolute -bottom-1/4 right-1/4 w-96 h-96 bg-[#008CFF]/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
         </div>
       </div>
     </section>

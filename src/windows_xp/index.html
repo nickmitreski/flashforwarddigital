@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Windows XP Simulator with AI Internet</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Windows XP Theme (include only one theme at a time) -->
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+  </head>
+  <body>
+    <div class="desktop" style="background-image: url('/src/windows_xp/bg.jpg');">
+      <div class="icons">
+        <!-- Desktop icons will be added dynamically from the Desktop folder -->
+      </div>
+      <div class="taskbar">
+        <button class="start-button">
+          <img src="start.png" alt="Start">
+          <span>Start</span>
+        </button>
+        <div class="taskbar-items">
+          <!-- Taskbar items will be added here -->
+        </div>
+        <div class="system-tray">
+          <span data-analytics="session-duration">00:00:00</span>
+          <span data-analytics="total-clicks">0 clicks</span>
+          <span id="clock"></span>
+        </div>
+      </div>
+      <div class="start-menu">
+        <div class="start-menu-header">
+          <img src="Default.png" alt="User icon" width="48" height="48">
+          <span>User</span>
+        </div>
+        <div class="start-menu-items">
+          <!-- Start menu items will be added dynamically -->
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/analytics.js"></script>
+  </body>
+</html>

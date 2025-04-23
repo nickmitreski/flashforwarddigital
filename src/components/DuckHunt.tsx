@@ -1,5 +1,5 @@
 import React from 'react';
-import Win95FolderWindow from './Win95FolderWindow';
+import { Win95FolderWindow } from '@/components';
 
 interface DuckHuntProps {
   isOpen: boolean;

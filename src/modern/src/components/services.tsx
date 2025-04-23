@@ -1,7 +1,8 @@
 import { ChevronRight, X } from 'lucide-react'
 import { motion, useScroll, useTransform, AnimatePresence, useSpring, useMotionValue } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import bg2 from '../assets/2.png'
+import { PortfolioPopup } from './PortfolioPopup'
+import { BrandingModal, ContentModal, AIModal } from './ServiceModals'
 
 interface ModalProps {
   isOpen: boolean
@@ -10,9 +11,10 @@ interface ModalProps {
   color: string
   gradient: string
   id: string
+  setActiveTab: (id: string) => void
 }
 
-function Modal({ isOpen, onClose, title, color, gradient, id }: ModalProps) {
+function Modal({ isOpen, onClose, title, color, gradient, id, setActiveTab }: ModalProps) {
   if (!isOpen) return null
 
   // Dummy content based on modal type
@@ -53,11 +55,46 @@ function Modal({ isOpen, onClose, title, color, gradient, id }: ModalProps) {
                 ))}
               </div>
             </div>
+            
+            {/* View Work Button */}
+            <div className="flex justify-center">
+              <button 
+                className="shiny-cta"
+                onClick={() => {
+                  // Set the active tab before closing the modal
+                  setActiveTab(id);
+                  // Close the modal
+                  onClose();
+                  // Dispatch the event after a small delay
+                  setTimeout(() => {
+                    const event = new CustomEvent('openPortfolio');
+                    window.dispatchEvent(event);
+                  }, 100);
+                }}
+              >
+                <span>View Work</span>
+                <ChevronRight className="w-4 h-4 ml-1" />
+              </button>
+            </div>
           </div>
         )
       case 'branding':
         return (
           <div className="space-y-8">
+            {/* Brand Video */}
+            <div className="relative rounded-xl overflow-hidden">
+              <div className="aspect-video bg-gradient-to-r from-gray-900 to-gray-800">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=0&mute=1&controls=1&modestbranding=1"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+
             {/* Brand Showcase */}
             <div className="grid grid-cols-2 gap-8">
               <div className="aspect-square bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl flex items-center justify-center">
@@ -234,8 +271,8 @@ const services = [
   {
     title: 'Content That Converts',
     description: 'Compelling content strategies that drive engagement and conversions.',
-    color: 'text-red-400',
-    gradient: 'from-red-400 via-pink-500 to-rose-600',
+    color: 'text-[#FF1493]',
+    gradient: 'from-[#FF1493] via-[#FF1493] to-[#FF1493]',
     id: 'content',
     features: [
       'Content Strategy',
@@ -273,8 +310,8 @@ const services = [
   {
     title: 'Performance Optimization',
     description: 'Optimize your digital assets for peak performance and efficiency.',
-    color: 'text-yellow-400',
-    gradient: 'from-yellow-400 via-amber-500 to-orange-400',
+    color: 'text-red-400',
+    gradient: 'from-red-400 via-red-500 to-red-600',
     id: 'performance',
     features: [
       'Speed Optimization',
@@ -285,35 +322,61 @@ const services = [
   },
 ]
 
-export function Services() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [activeModal, setActiveModal] = useState<string | null>(null)
+export default function Services() {
+  const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: containerRef,
     offset: ["start end", "end start"]
   })
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1])
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50])
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0])
+
+  const [activeTab, setActiveTab] = useState('web_design')
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false)
+  const [selectedService, setSelectedService] = useState<string | null>(null)
+  
+  // Add event listener for opening portfolio
+  useEffect(() => {
+    const handleOpenPortfolio = () => {
+      setIsPortfolioOpen(true);
+    };
+    
+    window.addEventListener('openPortfolio', handleOpenPortfolio);
+    
+    return () => {
+      window.removeEventListener('openPortfolio', handleOpenPortfolio);
+    };
+  }, []);
+
+  const handleServiceClick = (service: string) => {
+    setSelectedService(service)
+  }
+
+  const handleCloseModal = () => {
+    setSelectedService(null)
+  }
 
   return (
-    <section ref={sectionRef} id="services" className="relative py-24 overflow-hidden bg-black border-t border-b border-[#008CFF]/30">
-      {/* Fixed Background with dark overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    <section ref={containerRef} id="services" className="relative min-h-screen py-32 overflow-hidden">
+      {/* Background Image */}
+      <motion.div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
         style={{ 
-          backgroundImage: `url(${bg2})`,
-          backgroundAttachment: 'fixed'
+          backgroundImage: `url(/backgrounds/services-bg.png)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          y,
+          opacity
         }}
       />
-      <motion.div 
-        className="absolute inset-0 bg-black/50"
-        style={{ opacity }}
-      /> {/* Dark overlay */}
-      
-      {/* Gradient Background */}
-      <div className="gradient-bg z-[2]" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50" />
 
-      <div className="relative z-[5] w-full">
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4 text-3xl font-light text-white/90 max-w-5xl mx-auto text-center">
           <motion.p 
             className="leading-tight"
@@ -352,7 +415,7 @@ export function Services() {
           </motion.p>
         </div>
         
-        <div className="mt-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mt-32 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
@@ -363,11 +426,10 @@ export function Services() {
                 whileHover={{ scale: 1.05 }}
                 viewport={{ once: true }}
               >
-                <button 
-                  onClick={() => setActiveModal(service.id)}
-                  className="w-full text-left"
-                >
-                  <div className="relative bg-gray-950/50 backdrop-blur-sm rounded-2xl p-8 h-full border hover:border-2 transition-all duration-300 group"
+                <div className="w-full text-left">
+                  <div 
+                    className="relative bg-gray-950/50 backdrop-blur-sm rounded-2xl p-8 h-full border hover:border-2 transition-all duration-300 group cursor-pointer"
+                    onClick={() => handleServiceClick(service.id)}
                     style={{
                       borderColor: service.id === 'web_design' ? 'rgba(0, 140, 255, 0.3)' :
                                  service.id === 'branding' ? 'rgba(250, 204, 21, 0.3)' :
@@ -397,37 +459,13 @@ export function Services() {
                         </motion.li>
                       ))}
                     </ul>
-                    <motion.div 
-                      className={`shiny-cta mt-4 bg-gradient-to-r ${service.gradient} group relative inline-flex items-center justify-center px-6 py-2 rounded-full overflow-hidden transition-all duration-300`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <span className="relative text-white font-medium flex items-center">
-                        Learn More
-                        <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </span>
-                    </motion.div>
                   </div>
-                </button>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
-
-      {/* Modals */}
-      {services.map((service) => (
-        <Modal
-          key={service.id}
-          isOpen={activeModal === service.id}
-          onClose={() => setActiveModal(null)}
-          title={service.title}
-          color={service.color}
-          gradient={service.gradient}
-          id={service.id}
-        />
-      ))}
 
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -456,6 +494,36 @@ export function Services() {
           }}
         />
       </div>
+
+      {/* Portfolio Popup */}
+      <PortfolioPopup
+        isOpen={isPortfolioOpen}
+        onClose={() => setIsPortfolioOpen(false)}
+      />
+
+      <BrandingModal
+        isOpen={selectedService === 'branding'}
+        onClose={handleCloseModal}
+        title="Strategic Branding"
+        color="text-yellow-400"
+        gradient="from-yellow-400 via-amber-500 to-orange-400"
+      />
+
+      <ContentModal
+        isOpen={selectedService === 'content'}
+        onClose={handleCloseModal}
+        title="Content That Engages"
+        color="text-[#FF1493]"
+        gradient="from-pink-500 via-rose-500 to-red-500"
+      />
+
+      <AIModal
+        isOpen={selectedService === 'ai'}
+        onClose={handleCloseModal}
+        title="AI-Powered Growth"
+        color="text-emerald-400"
+        gradient="from-emerald-400 via-teal-500 to-cyan-400"
+      />
     </section>
   )
 } 

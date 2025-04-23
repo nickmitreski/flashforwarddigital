@@ -53,12 +53,20 @@ const Desktop: React.FC = () => {
           <div className="absolute inset-0 bg-[#c0c0c0] border-[3px] border-[#ffffff] border-r-[#808080] border-b-[#808080] transform transition-transform group-hover:-translate-y-1"></div>
           <div className="relative px-12 py-6 bg-[#c0c0c0] border-[3px] border-[#ffffff] border-r-[#808080] border-b-[#808080] font-[system-ui] text-xl transform transition-transform active:translate-y-1 active:border-[#808080] active:border-r-[#ffffff] active:border-b-[#ffffff] group-hover:bg-[#d4d4d4]">
             <div className="flex flex-col items-center gap-3">
-              <img src="/lovable-uploads/95545d84-1015-4c18-8508-5625fd44954f.png" alt="Windows" className="w-12 h-12" />
+              <img src="/icons/windows-logo.png" alt="Windows" className="w-12 h-12" />
               <span>Go to Modern Site</span>
             </div>
           </div>
         </div>
       </div>
+
+      <button
+        onClick={toggleStartMenu}
+        className="flex items-center space-x-1 px-2 py-1 bg-gray-200 hover:bg-gray-300 active:bg-gray-400 border-t border-r border-b border-gray-400 rounded-r"
+      >
+        <img src="/icons/windows-logo.png" alt="Windows" className="w-12 h-12" />
+        <span className="font-bold">Start</span>
+      </button>
     </div>
   );
 };

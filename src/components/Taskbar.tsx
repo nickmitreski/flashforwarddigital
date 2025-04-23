@@ -15,10 +15,14 @@ const Taskbar = ({ startMenuOpen, setStartMenuOpen, onPowerOff }: TaskbarProps) 
     return () => clearInterval(timer);
   }, []);
 
+  const handleStartClick = () => {
+    setStartMenuOpen(!startMenuOpen);
+  };
+
   return (
     <div className="fixed bottom-0 left-0 right-0 h-8 bg-win98-gray border-t-2 border-win98-border-light flex items-center justify-between px-2">
       <button
-        onClick={() => setStartMenuOpen(!startMenuOpen)}
+        onClick={handleStartClick}
         className="h-6 flex items-center justify-center bg-win98-gray border-2 border-win98-border-light border-r-win98-border-dark border-b-win98-border-dark"
       >
         <img 

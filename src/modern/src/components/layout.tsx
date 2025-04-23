@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-
-const navigation = [
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Stats', href: '#stats' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'Contact', href: '#contact' },
-]
+import { Chatbot } from './Chatbot'
+import { MAIN_NAVIGATION } from '../constants/navigation'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -48,7 +42,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex md:items-center md:space-x-8">
-              {navigation.map((item) => (
+              {MAIN_NAVIGATION.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -79,7 +73,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           {isMenuOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {navigation.map((item) => (
+                {MAIN_NAVIGATION.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
@@ -96,6 +90,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </header>
 
       <main className="w-full">{children}</main>
+
+      {/* Add Chatbot */}
+      <Chatbot />
     </div>
   )
 } 

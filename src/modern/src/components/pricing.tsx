@@ -1,7 +1,6 @@
 import { Check, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import bg3 from '../assets/3.png'
 
 const plans = [
   {
@@ -49,13 +48,13 @@ const plans = [
       'Unlimited Pages',
       'E-commerce Integration',
       'Custom Functionality',
-      'AI-Powered Features',
       'Priority Support',
-      '12 Months Support',
-      'Advanced Analytics',
+      'Advanced Security',
+      '6 Months Support',
+      'Custom Analytics',
     ],
-    color: 'text-red-400',
-    gradient: 'from-red-400 via-pink-500 to-rose-600',
+    color: 'text-emerald-400',
+    gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
     highlighted: false,
   },
 ]
@@ -65,17 +64,20 @@ export function Pricing() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
 
   return (
-    <section id="pricing" className="relative py-24">
-      {/* Fixed Background with dark overlay */}
+    <section id="pricing" className="relative py-32 overflow-hidden">
+      {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
         style={{ 
-          backgroundImage: `url(${bg3})`,
-          backgroundAttachment: 'fixed'
+          backgroundImage: `url(/backgrounds/hero-bg.png)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
-      <div className="absolute inset-0 bg-black/50" /> {/* Dark overlay */}
-      
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4 text-3xl font-light text-white/90 max-w-5xl mx-auto text-center">
           <motion.p 
@@ -119,13 +121,10 @@ export function Pricing() {
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative"
-              onHoverStart={() => setHoveredPlan(plan.name)}
-              onHoverEnd={() => setHoveredPlan(null)}
-              onClick={() => setSelectedPlan(selectedPlan === plan.name ? null : plan.name)}
+              className="relative transform-style-preserve-3d"
+              onMouseEnter={() => setHoveredPlan(plan.name)}
+              onMouseLeave={() => setHoveredPlan(null)}
+              onClick={() => setSelectedPlan(plan.name === selectedPlan ? null : plan.name)}
             >
               <motion.div
                 className={`group relative bg-gray-900/50 backdrop-blur-lg rounded-2xl p-8 border 
@@ -229,45 +228,7 @@ export function Pricing() {
                 )}
               </motion.div>
 
-              {/* Floating elements around the card */}
-              <AnimatePresence>
-                {hoveredPlan === plan.name && (
-                  <>
-                    <motion.div
-                      className="absolute -z-10 w-20 h-20 rounded-full bg-[#008CFF]/20 blur-xl"
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ 
-                        opacity: 0.5, 
-                        scale: 1,
-                        x: [0, 10, -10, 0],
-                        y: [0, -10, 10, 0],
-                      }}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      style={{
-                        top: '20%',
-                        left: '-10%',
-                      }}
-                    />
-                    <motion.div
-                      className="absolute -z-10 w-16 h-16 rounded-full bg-[#008CFF]/20 blur-xl"
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ 
-                        opacity: 0.5, 
-                        scale: 1,
-                        x: [0, -10, 10, 0],
-                        y: [0, 10, -10, 0],
-                      }}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                      style={{
-                        bottom: '20%',
-                        right: '-10%',
-                      }}
-                    />
-                  </>
-                )}
-              </AnimatePresence>
+              {/* Floating elements around the card - REMOVED */}
             </motion.div>
           ))}
         </div>
@@ -299,33 +260,7 @@ export function Pricing() {
         </motion.div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          className="absolute -top-1/4 left-1/4 w-96 h-96 bg-[#4f2d99]/5 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{ 
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div 
-          className="absolute -bottom-1/4 right-1/4 w-96 h-96 bg-[#7b2dbd]/5 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{ 
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      </div>
+      {/* Decorative Elements - REMOVED */}
     </section>
   )
-} 
+}

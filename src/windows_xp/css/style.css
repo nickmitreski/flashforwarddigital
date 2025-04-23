@@ -1,0 +1,136 @@
+.system-tray {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  margin: 2px 0;
+  padding: 0 5px;
+  background: url('../taskbar.png') repeat-x;
+  border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+.system-tray span {
+  font-family: Tahoma, sans-serif;
+  font-size: 11px;
+  color: black;
+  margin: 0 4px;
+  padding: 2px 4px;
+  cursor: default;
+}
+
+.system-tray .divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(0,0,0,0.2);
+  margin: 0 4px;
+}
+
+.system-tray .total-clicks {
+  opacity: 0.9;
+}
+
+/* Add hover effect for system tray items */
+.system-tray span:hover {
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+}
+
+[data-analytics="session-duration"] {
+  font-weight: bold;
+}
+
+[data-analytics="total-clicks"] {
+  opacity: 0.9;
+}
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: url('../taskbar.png') repeat-x;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  padding: 0 2px;
+}
+
+.start-button {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  padding: 1px 4px;
+  margin: 2px 3px;
+  border: none;
+  background: url('../start.png') no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  min-width: 54px;
+}
+
+.start-button:hover {
+  filter: brightness(1.1);
+}
+
+.start-button:active {
+  filter: brightness(0.9);
+}
+
+.start-button img {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.start-button span {
+  font-family: Tahoma, sans-serif;
+  font-size: 11px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+}
+
+.taskbar-items {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  margin: 0 2px;
+  height: 100%;
+}
+
+.taskbar-button {
+  height: 22px;
+  min-width: 160px;
+  max-width: 200px;
+  margin: 2px;
+  padding: 1px 5px;
+  display: flex;
+  align-items: center;
+  background: url('../taskbarbutton.png') repeat-x;
+  border: 1px solid rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.taskbar-button:hover {
+  background: url('../taskbarbuttonhighlight.png') repeat-x;
+}
+
+.taskbar-button:active,
+.taskbar-button.active {
+  background: url('../taskbarbuttonpress.png') repeat-x;
+}
+
+.taskbar-button img {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.taskbar-button span {
+  font-family: Tahoma, sans-serif;
+  font-size: 11px;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} 

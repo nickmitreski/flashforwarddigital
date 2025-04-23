@@ -103,7 +103,7 @@ export default function Home() {
               </div>
               <div className="overflow-hidden">
                 <div className="animate-fade-in-up [animation-delay:200ms]">
-                  Branding that <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600">engages</span>.
+                  Branding that <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF1493] via-[#FF1493] to-[#FF1493]">engages</span>.
                 </div>
               </div>
               <div className="overflow-hidden">
@@ -113,7 +113,7 @@ export default function Home() {
               </div>
               <div className="overflow-hidden">
                 <div className="animate-fade-in-up [animation-delay:600ms]">
-                  AI that <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600">automates growth</span>.
+                  AI that <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF1493] via-[#FF1493] to-[#FF1493]">automates growth</span>.
                 </div>
               </div>
             </h1>
@@ -140,7 +140,7 @@ export default function Home() {
         {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse [animation-delay:1000ms]" />
+          <div className="absolute -bottom-1/4 right-1/4 w-96 h-96 bg-[#FF1493]/10 rounded-full blur-3xl animate-pulse [animation-delay:1000ms]" />
         </div>
       </section>
 
@@ -160,13 +160,13 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Web Design Card */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-[#FF1493]/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
               <div className="relative h-full bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-purple-500/10 transition-all duration-300 group-hover:border-purple-500/30">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-purple-500/10 rounded-xl">
                     <Monitor className="h-8 w-8 text-purple-400" />
                   </div>
-                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">Web Design</h3>
+                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-[#FF1493]">Web Design</h3>
                 </div>
                 <p className="text-gray-400 mb-8">
                   High-performance websites that convert visitors into customers. We combine stunning design with strategic UX to create digital experiences that drive results.
@@ -197,15 +197,15 @@ export default function Home() {
 
             {/* Branding Card */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-orange-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
-              <div className="relative h-full bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-pink-500/10 transition-all duration-300 group-hover:border-pink-500/30">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF1493]/10 to-orange-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
+              <div className="relative h-full bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-[#FF1493]/10 transition-all duration-300 group-hover:border-[#FF1493]/30">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-pink-500/10 rounded-xl">
-                    <svg className="h-8 w-8 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="p-3 bg-[#FF1493]/10 rounded-xl">
+                    <svg className="h-8 w-8 text-[#FF1493]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-orange-400">Branding</h3>
+                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF1493] to-orange-400">Branding</h3>
                 </div>
                 <p className="text-gray-400 mb-8">
                   Build a brand that resonates with your audience and stands out in your industry. We create comprehensive brand identities that tell your story.
@@ -220,13 +220,13 @@ export default function Home() {
                     'Brand Voice & Messaging'
                   ].map((feature) => (
                     <li key={feature} className="flex items-center gap-3 text-gray-300 group/item">
-                      <div className="h-1.5 w-1.5 rounded-full bg-pink-500/50 group-hover/item:bg-pink-400 transition-colors" />
-                      <span className="group-hover/item:text-pink-400 transition-colors">{feature}</span>
+                      <div className="h-1.5 w-1.5 rounded-full bg-[#FF1493]/50 group-hover/item:bg-[#FF1493] transition-colors" />
+                      <span className="group-hover/item:text-[#FF1493] transition-colors">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 pt-8 border-t border-pink-500/10">
-                  <button className="group/btn w-full py-4 rounded-xl bg-pink-500/10 text-pink-400 hover:bg-pink-500/20 transition-all duration-300">
+                <div className="mt-8 pt-8 border-t border-[#FF1493]/10">
+                  <button className="group/btn w-full py-4 rounded-xl bg-[#FF1493]/10 text-[#FF1493] hover:bg-[#FF1493]/20 transition-all duration-300">
                     Learn More
                     <ChevronRight className="inline-block ml-2 transition-transform group-hover/btn:translate-x-1" />
                   </button>
@@ -280,7 +280,7 @@ export default function Home() {
       <section className="py-24 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">
+            <h2 className="text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-[#FF1493]">
               {visitDuration}
             </h2>
             <p className="mt-4 text-xl text-gray-300">
@@ -309,9 +309,9 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-b from-gray-950 via-purple-950/5 to-gray-950">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-pink-500/10 blur-3xl -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-[#FF1493]/10 blur-3xl -z-10" />
             <div className="space-y-16">
-              <h2 className="text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">
+              <h2 className="text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-[#FF1493]">
                 The Digital Era Is Loud.<br />We Make You Unforgettable.
               </h2>
               <div className="prose prose-lg prose-invert mx-auto">
@@ -319,13 +319,13 @@ export default function Home() {
                   Let's be real — attention spans are at an all-time low, and making an impact online has never been harder. You don't just need a website. You don't just need content. You need something <span className="text-white font-bold">bold</span>, <span className="text-white font-bold">different</span>, and <span className="text-white font-bold">impossible to ignore</span>.
                 </p>
                 <div className="my-16 relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-[#FF1493]/20 rounded-2xl blur-lg" />
                   <p className="relative text-4xl font-bold text-center text-white py-12">
                     That's where Flash Forward comes in.
                   </p>
                 </div>
                 <p className="text-2xl leading-relaxed text-gray-300">
-                  We specialise in creating custom-tailored digital experiences that don't just grab attention — they <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 font-bold">hold it hostage</span>. Whether it's web design & development, branding, AI automation, or content creation, we make sure you <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 font-bold">stand out in a sea of sameness</span>.
+                  We specialise in creating custom-tailored digital experiences that don't just grab attention — they <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-[#FF1493] font-bold">hold it hostage</span>. Whether it's web design & development, branding, AI automation, or content creation, we make sure you <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-[#FF1493] font-bold">stand out in a sea of sameness</span>.
                 </p>
               </div>
             </div>
@@ -339,7 +339,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Web Design Card */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-[#FF1493]/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
               <div className="relative bg-gray-900/50 backdrop-blur-xl p-8 rounded-2xl border border-gray-800">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-purple-500/10 rounded-xl">
@@ -371,11 +371,11 @@ export default function Home() {
 
             {/* Branding That Engages */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF1493]/10 to-purple-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
               <div className="relative bg-gray-900/50 backdrop-blur-xl p-8 rounded-2xl border border-gray-800">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-pink-500/10 rounded-xl">
-                    <Palette className="h-8 w-8 text-pink-500" />
+                  <div className="p-3 bg-[#FF1493]/10 rounded-xl">
+                    <Palette className="h-8 w-8 text-[#FF1493]" />
                   </div>
                   <h3 className="text-2xl font-bold">Branding That Engages</h3>
                 </div>
@@ -390,7 +390,7 @@ export default function Home() {
                     'Custom Visual Assets & Graphics'
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-pink-500" />
+                      <div className="h-1.5 w-1.5 rounded-full bg-[#FF1493]" />
                       <span className="text-gray-300">{item}</span>
                     </li>
                   ))}
@@ -400,7 +400,7 @@ export default function Home() {
 
             {/* Content That Converts */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-[#FF1493]/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
               <div className="relative bg-gray-900/50 backdrop-blur-xl p-8 rounded-2xl border border-gray-800">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-purple-500/10 rounded-xl">
@@ -430,11 +430,11 @@ export default function Home() {
 
             {/* AI-Powered Automation & Growth */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF1493]/10 to-purple-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
               <div className="relative bg-gray-900/50 backdrop-blur-xl p-8 rounded-2xl border border-gray-800">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-pink-500/10 rounded-xl">
-                    <Bot className="h-8 w-8 text-pink-500" />
+                  <div className="p-3 bg-[#FF1493]/10 rounded-xl">
+                    <Bot className="h-8 w-8 text-[#FF1493]" />
                   </div>
                   <h3 className="text-2xl font-bold">AI-Powered Automation & Growth</h3>
                 </div>
@@ -451,7 +451,7 @@ export default function Home() {
                     'Web Traffic Optimisation & Automated SEO Strategies'
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-pink-500" />
+                      <div className="h-1.5 w-1.5 rounded-full bg-[#FF1493]" />
                       <span className="text-gray-300">{item}</span>
                     </li>
                   ))}
@@ -471,7 +471,7 @@ export default function Home() {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-[#FF1493] dark:from-purple-400 dark:to-[#FF1493]">
               Pricing Plans
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -482,7 +482,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Essential Plan */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-[#FF1493]/5 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
               <div className="relative h-full bg-white/50 dark:bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-purple-500/10 transition-all duration-300 group-hover:scale-[1.02]">
                 <div className="absolute -top-4 left-4">
                   <div className="bg-white dark:bg-black rounded-lg p-2 shadow-md border border-purple-500/10">
@@ -525,10 +525,10 @@ export default function Home() {
 
             {/* Growth Plan - Featured */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-[#FF1493]/20 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
               <div className="relative h-full bg-gray-900 dark:bg-white p-8 rounded-2xl border border-purple-500/20 transition-all duration-300 group-hover:scale-[1.02] transform translate-y-[-1rem]">
                 <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
+                  <span className="bg-gradient-to-r from-purple-600 to-[#FF1493] text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
                     MOST POPULAR
                   </span>
                 </div>
@@ -570,12 +570,12 @@ export default function Home() {
 
             {/* Enterprise Plan */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-orange-500/5 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
-              <div className="relative h-full bg-white/50 dark:bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-pink-500/10 transition-all duration-300 group-hover:scale-[1.02]">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF1493]/5 to-orange-500/5 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl" />
+              <div className="relative h-full bg-white/50 dark:bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-[#FF1493]/10 transition-all duration-300 group-hover:scale-[1.02]">
                 <div className="absolute -top-4 left-4">
-                  <div className="bg-white dark:bg-black rounded-lg p-2 shadow-md border border-pink-500/10">
+                  <div className="bg-white dark:bg-black rounded-lg p-2 shadow-md border border-[#FF1493]/10">
                     <div className="w-8 h-8">
-                      <div className="w-full h-full border-2 border-pink-500" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
+                      <div className="w-full h-full border-2 border-[#FF1493]" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
                     </div>
                   </div>
                 </div>
@@ -601,7 +601,7 @@ export default function Home() {
                     'Unlimited Revisions'
                   ].map((feature) => (
                     <li key={feature} className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                      <svg className="w-5 h-5 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-5 h-5 text-[#FF1493]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{feature}</span>
@@ -609,7 +609,7 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <button className="w-full py-4 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium hover:bg-pink-600 dark:hover:bg-pink-400 transition-all duration-300 group-hover:scale-105">
+                <button className="w-full py-4 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium hover:bg-[#FF1493] dark:hover:bg-[#FF1493] transition-all duration-300 group-hover:scale-105">
                   Contact Us
                 </button>
               </div>
@@ -631,10 +631,10 @@ export default function Home() {
                   'Video Production'
                 ].map((addon) => (
                   <div key={addon} className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur transition-all duration-300 group-hover:blur-xl" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-[#FF1493]/5 rounded-full blur transition-all duration-300 group-hover:blur-xl" />
                     <button className="relative px-6 py-2 rounded-full bg-white/5 dark:bg-black/5 backdrop-blur-xl border border-purple-500/10 text-gray-600 dark:text-gray-300 hover:border-purple-500/30 transition-all duration-300">
                       {addon}
-                      <span className="block h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300" />
+                      <span className="block h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-purple-500 to-[#FF1493] transition-all duration-300" />
                     </button>
                   </div>
                 ))}
@@ -645,9 +645,9 @@ export default function Home() {
           {/* CTA Section */}
           <div className="mt-20">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-2xl blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-[#FF1493]/5 rounded-2xl blur-xl" />
               <div className="relative bg-white/5 dark:bg-black/5 backdrop-blur-xl p-12 rounded-2xl border border-purple-500/10 text-center">
-                <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
+                <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-[#FF1493] dark:from-purple-400 dark:to-[#FF1493]">
                   Ready to Transform Your Digital Presence?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">

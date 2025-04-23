@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Win95FolderWindow from './Win95FolderWindow';
 import Minesweeper from './minesweeper';
+import DuckHunt from './DuckHunt';
+import StreetFighter from './StreetFighter';
+import MortalKombat from './MortalKombat';
 
 interface GamesProps {
   isOpen: boolean;
@@ -93,23 +96,26 @@ const Games: React.FC<GamesProps> = ({ isOpen, onClose }) => {
         </Win95FolderWindow>
       )}
 
-      {/* Placeholder windows for future games */}
-      {Object.entries(openGames).map(([game, isOpen]) => {
-        if (game === 'minesweeper' || !isOpen) return null;
-        return (
-          <Win95FolderWindow
-            key={game}
-            title={game.charAt(0).toUpperCase() + game.slice(1)}
-            isOpen={true}
-            onClose={() => toggleGame(game as keyof typeof openGames)}
-            objectCount={1}
-          >
-            <div className="p-4 text-center bg-white min-h-[200px]">
-              <p className="text-sm font-[system-ui]">{game.charAt(0).toUpperCase() + game.slice(1)} game coming soon!</p>
-            </div>
-          </Win95FolderWindow>
-        );
-      })}
+      {openGames.duckhunt && (
+        <DuckHunt
+          isOpen={true}
+          onClose={() => toggleGame('duckhunt')}
+        />
+      )}
+
+      {openGames.streetfighter && (
+        <StreetFighter
+          isOpen={true}
+          onClose={() => toggleGame('streetfighter')}
+        />
+      )}
+
+      {openGames.mortalkombat && (
+        <MortalKombat
+          isOpen={true}
+          onClose={() => toggleGame('mortalkombat')}
+        />
+      )}
     </>
   );
 };

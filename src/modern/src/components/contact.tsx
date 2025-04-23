@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import { Send } from 'lucide-react'
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -12,103 +12,26 @@ export function Contact() {
 
   const sectionRef = useRef<HTMLElement>(null)
   
-  // Initialize motion values for parallax effect
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
-  
-  const springX = useSpring(mouseX, {
-    stiffness: 100,
-    damping: 30,
-    mass: 1
-  })
-  
-  const springY = useSpring(mouseY, {
-    stiffness: 100,
-    damping: 30,
-    mass: 1
-  })
-  
-  const textSpringX = useSpring(useTransform(mouseX, x => x * -0.3), {
-    stiffness: 100,
-    damping: 30,
-    mass: 1
-  })
-  
-  const textSpringY = useSpring(useTransform(mouseY, y => y * -0.3), {
-    stiffness: 100,
-    damping: 30,
-    mass: 1
-  })
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e
-      const { innerWidth, innerHeight } = window
-      
-      // Calculate mouse position relative to center (-1 to 1)
-      const x = (clientX - innerWidth / 2) / innerWidth
-      const y = (clientY - innerHeight / 2) / innerHeight
-      
-      // Update motion values
-      mouseX.set(x * 20)
-      mouseY.set(y * 20)
-    }
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true })
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [mouseX, mouseY])
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
+    // Handle form submission
     console.log('Form submitted:', formData)
   }
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
   return (
-    <section id="contact" className="relative py-24 border-t border-[#008CFF]/30">
-      {/* Parallax Background */}
-      <motion.div 
-        className="absolute inset-0 bg-black z-[1]"
-        style={{ 
-          opacity: 0.7,
-          x: springX,
-          y: springY
-        }}
-      />
+    <section ref={sectionRef} id="contact" className="relative py-24 bg-black">
+      {/* Background effects - REMOVED */}
       
-      {/* Gradient Background with Parallax */}
-      <motion.div 
-        className="gradient-bg z-[2]"
-        style={{ 
-          x: useSpring(useTransform(springX, x => x * -0.3), {
-            stiffness: 100,
-            damping: 30,
-            mass: 1
-          }),
-          y: useSpring(useTransform(springY, y => y * -0.3), {
-            stiffness: 100,
-            damping: 30,
-            mass: 1
-          })
-        }}
-      />
+      {/* Gradient Background - REMOVED */}
 
-      <motion.div 
-        className="relative z-[5] w-full"
-        style={{
-          x: textSpringX,
-          y: textSpringY
-        }}
-      >
+      <div className="relative z-[5] w-full">
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-4 text-3xl font-light text-white/90 max-w-5xl mx-auto text-center">
+          <div className="space-y-4 text-3xl font-light text-white max-w-5xl mx-auto text-center">
             <motion.p 
               className="leading-tight"
               initial={{ opacity: 0, y: 20 }}
@@ -128,22 +51,9 @@ export function Contact() {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Your vision +{' '}
-              <span className="text-[#7b2dbd]">our expertise</span>{' '}
-              ={' '}
-              <span className="text-yellow-400">digital magic</span>
-            </motion.p>
-
-            <motion.p 
-              className="leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Ready to{' '}
-              <span className="text-red-400">transform</span>{' '}
-              your online presence?
+              Reach out and let's start a{' '}
+              <span className="text-[#7b2dbd]">conversation</span>{' '}
+              about your project.
             </motion.p>
           </div>
 
@@ -270,7 +180,7 @@ export function Contact() {
             }}
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 } 

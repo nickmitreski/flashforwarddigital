@@ -1,0 +1,300 @@
+/* Custom Properties */
+@font-face {
+  src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
+    format("woff2");
+  font-family: "Meta";
+  font-style: normal;
+  font-weight: normal;
+}
+
+@property --angle-1 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: -75deg;
+}
+
+@property --angle-2 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: -45deg;
+}
+
+:root {
+  --global--size: clamp(1.5rem, 3vw, 4rem);
+  --anim--hover-time: 400ms;
+  --anim--hover-ease: cubic-bezier(0.25, 1, 0.5, 1);
+  --charcoal: #111111;
+  --text-shadow: rgba(0, 0, 0, 0.3);
+  --hue: 320;
+  --text: oklch(98% .1 var(--hue));
+  --shadow: oklch(25% .2 var(--hue));
+  --highlight: oklch(98% .05 var(--hue));
+}
+
+/* Title Styles */
+.choice-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 6rem;
+  margin-top: -4rem;
+  z-index: 2;
+}
+
+.choice-title-start {
+  font-size: 7rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: #e9e9e9;
+  text-transform: lowercase;
+  text-shadow: 
+    0 0.15ch 15px var(--text-shadow),
+    0 -2px 0 #000;
+}
+
+.choice-title-end {
+  font-size: 7rem;
+  font-family: "Meta", sans-serif;
+  font-variation-settings: "wght" 900, "ital" 1;
+  letter-spacing: -0.1em;
+  -webkit-text-stroke: 4px #e9e9e9;
+  color: transparent;
+  position: relative;
+  cursor: pointer;
+  text-shadow: 
+    8px 8px 0px #07bccc,
+    12px 12px 0px #e601c0,
+    16px 16px 0px #e9019a,
+    20px 20px 0px #f40468,
+    32px 32px 8px rgba(72, 40, 150, 0.4);
+  transition: all 0.5s;
+}
+
+.choice-title-end:hover {
+  font-variation-settings: "wght" 100, "ital" 0;
+  text-shadow: none;
+}
+
+.choice-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--global--size);
+  background: linear-gradient(
+    -75deg,
+    rgba(17, 17, 17, 0.95),
+    rgba(23, 23, 23, 0.98),
+    rgba(17, 17, 17, 0.95)
+  );
+  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  background-color: rgba(17, 17, 17, 1);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  position: relative;
+}
+
+.choice-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  z-index: 2;
+}
+
+.choice-subtitle {
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  opacity: 0.9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.choice-buttons {
+  display: flex;
+  gap: 3rem;
+  z-index: 2;
+}
+
+/* Button Styles */
+.glass-button-wrap {
+  position: relative;
+  z-index: 2;
+  border-radius: 999vw;
+  background: transparent;
+  pointer-events: none;
+  transition: all var(--anim--hover-time) var(--anim--hover-ease);
+}
+
+.glass-button-shadow {
+  --shadow-cuttoff-fix: 2em;
+  position: absolute;
+  width: calc(100% + var(--shadow-cuttoff-fix));
+  height: calc(100% + var(--shadow-cuttoff-fix));
+  top: calc(0% - var(--shadow-cuttoff-fix) / 2);
+  left: calc(0% - var(--shadow-cuttoff-fix) / 2);
+  filter: blur(clamp(2px, 0.125em, 12px));
+  overflow: visible;
+  pointer-events: none;
+}
+
+.glass-button-shadow::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: 999vw;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+  height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+  top: calc(var(--shadow-cuttoff-fix) - 0.5em);
+  left: calc(var(--shadow-cuttoff-fix) - 0.875em);
+  padding: 0.125em;
+  box-sizing: border-box;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transition: all var(--anim--hover-time) var(--anim--hover-ease);
+  overflow: visible;
+  opacity: 1;
+}
+
+.glass-button {
+  --border-width: clamp(1px, 0.0625em, 4px);
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  pointer-events: auto;
+  z-index: 3;
+  background: linear-gradient(
+    -75deg,
+    rgba(23, 23, 23, 0.8),
+    rgba(28, 28, 28, 0.9),
+    rgba(23, 23, 23, 0.8)
+  );
+  border-radius: 999vw;
+  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.15),
+    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.2),
+    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  transition: all var(--anim--hover-time) var(--anim--hover-ease);
+}
+
+.glass-button:hover {
+  transform: scale(0.975);
+  backdrop-filter: blur(0.01em);
+  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.15),
+    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.2),
+    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.2),
+    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.glass-button-wrap:first-child .glass-button span {
+  color: #07bccc;  /* Keep cyan/light blue for retro button */
+}
+
+.glass-button-wrap:last-child .glass-button span {
+  color: #e9019a;  /* Keep pink for modern button */
+}
+
+.glass-button span {
+  position: relative;
+  display: block;
+  user-select: none;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  font-size: 0.85em;
+  text-shadow: 0em 0.15em 0.03em rgba(0, 0, 0, 0.2);
+  transition: all var(--anim--hover-time) var(--anim--hover-ease);
+  padding-inline: 1.25em;
+  padding-block: 0.75em;
+}
+
+.glass-button:hover span {
+  text-shadow: 0.015em 0.015em 0.015em rgba(0, 0, 0, 0.25);
+}
+
+.glass-button span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: calc(100% - var(--border-width));
+  height: calc(100% - var(--border-width));
+  top: calc(0% + var(--border-width) / 2);
+  left: calc(0% + var(--border-width) / 2);
+  box-sizing: border-box;
+  border-radius: 999vw;
+  overflow: clip;
+  background: linear-gradient(
+    var(--angle-2),
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 40% 50%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  z-index: 3;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  transition: background-position calc(var(--anim--hover-time) * 1.25)
+      var(--anim--hover-ease),
+    --angle-2 calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease);
+}
+
+.glass-button::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: 999vw;
+  width: calc(100% + var(--border-width));
+  height: calc(100% + var(--border-width));
+  top: calc(0% - var(--border-width) / 2);
+  left: calc(0% - var(--border-width) / 2);
+  padding: var(--border-width);
+  box-sizing: border-box;
+  background: conic-gradient(
+      from var(--angle-1) at 50% 50%,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0) 5% 40%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 60% 95%,
+      rgba(255, 255, 255, 0.2)
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transition: all var(--anim--hover-time) var(--anim--hover-ease),
+    --angle-1 500ms ease;
+  box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.3);
+}
+
+/* Background Grid */
+.dotted-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.5;
+} 

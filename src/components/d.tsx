@@ -27,7 +27,7 @@ const DesktopIconGrid = ({ toggleWindow, openExternalLink }: DesktopIconGridProp
   const handlePromoVideosDoubleClick = () => {
     setModalContent(
       <iframe
-        src="/src/videofolio/index-videofolio.html"
+        src="/modern/videos"
         style={{ width: '100%', height: '100%', border: 'none' }}
         title="Promo Videos"
       />
@@ -134,7 +134,7 @@ const DesktopIconGrid = ({ toggleWindow, openExternalLink }: DesktopIconGridProp
         </>
       )}
       {isModalOpen && (
-        <Modal onClose={() => setModalOpen(false)}>
+        <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
           {modalContent}
         </Modal>
       )}
