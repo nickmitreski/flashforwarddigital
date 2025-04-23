@@ -11,10 +11,7 @@ import Win95Winamp from '@/components/Win95Winamp';
 import Games from '@/components/Games';
 import { analytics } from "@/lib/analytics";
 import { ChoiceScreen } from "@/features/landing/components/ChoiceScreen";
-<<<<<<< HEAD
 import TutorialManager from "@/components/TutorialManager";
-=======
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 
 // Add these style constants at the top after imports
 const win95MenuButton = "px-2 py-0.5 hover:bg-[#000080] hover:text-white focus:outline-none focus:bg-[#000080] focus:text-white text-left whitespace-nowrap font-[system-ui]";
@@ -132,12 +129,9 @@ const Index = () => {
                   onClose={() => toggleWindow("games")}
                 />
               )}
-<<<<<<< HEAD
 
               {/* Tutorial Manager */}
               <TutorialManager />
-=======
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
             </>
           )}
         </>
