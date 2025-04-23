@@ -1,6 +1,10 @@
 import { Check, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+<<<<<<< HEAD
+=======
+import bg3 from '../assets/backgrounds/hero-bg.png'
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 
 const plans = [
   {
@@ -53,8 +57,13 @@ const plans = [
       '6 Months Support',
       'Custom Analytics',
     ],
+<<<<<<< HEAD
     color: 'text-emerald-400',
     gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
+=======
+    color: 'text-pink-400',
+    gradient: 'from-pink-400 via-fuchsia-500 to-pink-600',
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
     highlighted: false,
   },
 ]
@@ -64,11 +73,17 @@ export function Pricing() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
 
   return (
+<<<<<<< HEAD
     <section id="pricing" className="relative py-32 overflow-hidden">
       {/* Background Image */}
+=======
+    <section id="pricing" className="relative py-24 bg-gray-100">
+      {/* Background Image - Fixed effect removed */}
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
         style={{ 
+<<<<<<< HEAD
           backgroundImage: `url(/backgrounds/hero-bg.png)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -78,6 +93,13 @@ export function Pricing() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
+=======
+          backgroundImage: `url(${bg3})`
+        }}
+      />
+      {/* Dark overlay - REMOVED */}
+      
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4 text-3xl font-light text-white/90 max-w-5xl mx-auto text-center">
           <motion.p 

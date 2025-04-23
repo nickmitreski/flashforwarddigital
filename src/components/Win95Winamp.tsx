@@ -16,13 +16,32 @@ const Win95Winamp: React.FC<Win95WinampProps> = ({ onClose }) => {
       initialTracks: [
         {
           metaData: {
-            artist: "DJ Mike Llama",
-            title: "Llama Whippin' Intro",
+            artist: "90s Mix",
+            title: "Track 1",
           },
-          url: "https://cdn.jsdelivr.net/gh/captbaritone/webamp@43434d82/mp3/llama-2.91.mp3",
-          duration: 5.322286,
+          url: "/audio/track1.mp3",
+          duration: 180,
         },
+        {
+          metaData: {
+            artist: "90s Mix",
+            title: "Track 2",
+          },
+          url: "/audio/track2.mp3",
+          duration: 180,
+        },
+        {
+          metaData: {
+            artist: "90s Mix",
+            title: "Track 3",
+          },
+          url: "/audio/track3.mp3",
+          duration: 180,
+        }
       ],
+      initialSkin: {
+        url: "https://cdn.jsdelivr.net/gh/captbaritone/webamp@43434d82/skins/SpyAMP%20II.wsz",
+      },
     });
 
     webamp.renderWhenReady(containerRef.current).then(() => {

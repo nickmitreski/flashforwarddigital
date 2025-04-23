@@ -26,27 +26,27 @@ const win95Label = "text-[11px] font-[system-ui] text-center mt-1 px-1";
 
 // Add these icon URLs at the top of the file after the imports
 const win95Icons = {
-  textFile: "https://win98icons.alexmeub.com/icons/png/notepad-0.png",
-  wordDoc: "https://win98icons.alexmeub.com/icons/png/write_file-0.png",
-  excelDoc: "https://win98icons.alexmeub.com/icons/png/excel_file-0.png",
-  folder: "https://win98icons.alexmeub.com/icons/png/directory_closed-4.png",
-  image: "https://win98icons.alexmeub.com/icons/png/paint_file-0.png",
-  video: "https://win98icons.alexmeub.com/icons/png/video_file-0.png",
-  audio: "https://win98icons.alexmeub.com/icons/png/sound-0.png",
-  help: "https://win98icons.alexmeub.com/icons/png/help_book-0.png",
-  settings: "https://win98icons.alexmeub.com/icons/png/settings_gear-0.png",
-  game: "https://win98icons.alexmeub.com/icons/png/joystick-0.png",
-  network: "https://win98icons.alexmeub.com/icons/png/network_computer_2-0.png",
-  computer: "https://win98icons.alexmeub.com/icons/png/computer_2-0.png",
-  cdrom: "https://win98icons.alexmeub.com/icons/png/cd_drive-5.png",
+  textFile: "/icons/notepad-0.png",
+  wordDoc: "/icons/write_file-0.png",
+  excelDoc: "/icons/excel_file-0.png",
+  folder: "/icons/directory_closed-4.png",
+  image: "/icons/paint_file-0.png",
+  video: "/icons/video_file-0.png",
+  audio: "/icons/sound-0.png",
+  help: "/icons/help_book-0.png",
+  settings: "/icons/settings_gear-0.png",
+  game: "/icons/joystick-0.png",
+  network: "/icons/network_computer_2-0.png",
+  computer: "/icons/computer_2-0.png",
+  cdrom: "/icons/cd_drive-5.png",
   floppyDrive: "https://win98icons.alexmeub.com/icons/png/floppy_drive-4.png",
-  error: "/lovable-uploads/error.png",
-  play: "https://win98icons.alexmeub.com/icons/png/media_play-0.png",
-  pause: "https://win98icons.alexmeub.com/icons/png/media_pause-0.png",
-  stop: "https://win98icons.alexmeub.com/icons/png/media_stop-0.png",
-  next: "https://win98icons.alexmeub.com/icons/png/media_next-0.png",
-  prev: "https://win98icons.alexmeub.com/icons/png/media_prev-0.png",
-  volume: "https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png"
+  error: "/icons/error.png",
+  play: "/icons/play.png",
+  pause: "/icons/pause.png",
+  stop: "/icons/stop.png",
+  next: "/icons/next.png",
+  prev: "/icons/prev.png",
+  volume: "/icons/volume.png"
 };
 
 // Update the interface to include all window types
@@ -183,6 +183,7 @@ const DesktopIconGrid = ({
     }
   };
 
+<<<<<<< HEAD
   const handleIconClick = (icon: string) => {
     soundPlayer.play('ding');
     // ... existing icon click logic ...
@@ -310,40 +311,71 @@ const DesktopIconGrid = ({
     <div className="grid grid-cols-2 gap-4 w-fit">
       <DesktopIcon
         icon="/lovable-uploads/95545d84-1015-4c18-8508-5625fd44954f.png"
+=======
+  return (
+    <div className="grid grid-cols-2 gap-4 w-fit">
+      <DesktopIcon
+        icon="/icons/95545d84-1015-4c18-8508-5625fd44954f.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="My Computer"
         onDoubleClick={() => toggleFolderWindow("computer")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/2baca9bf-b561-458e-8261-029c304a16a9.png"
+=======
+        icon="/icons/2baca9bf-b561-458e-8261-029c304a16a9.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Notepad"
         onDoubleClick={() => toggleFolderWindow("notepad")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/8e4189e0-c0c4-443d-9760-d907188d485a.png"
+=======
+        icon="/icons/8e4189e0-c0c4-443d-9760-d907188d485a.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Recycle Bin"
         onDoubleClick={() => toggleFolderWindow("recyclebin")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/7ad41ea0-8483-4e73-a800-0692685088a3.png"
+=======
+        icon="/icons/7ad41ea0-8483-4e73-a800-0692685088a3.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Internet Explorer"
         onDoubleClick={() => toggleFolderWindow("explorer")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/85716acf-aa1b-47c6-a710-e67220339c76.png"
+=======
+        icon="/icons/85716acf-aa1b-47c6-a710-e67220339c76.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="My Documents"
         onDoubleClick={() => toggleFolderWindow("documents")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/webtv.png"
+=======
+        icon="/icons/webtv.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="WebTV"
         onDoubleClick={() => handleToggleWindow("webtv")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/32551a2e-31f6-4695-9ed8-3abfa3946bf8.png"
+=======
+        icon="/icons/32551a2e-31f6-4695-9ed8-3abfa3946bf8.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="MS Paint"
         onDoubleClick={() => toggleWindow("paint")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/55e6bf6a-5595-4a49-adc9-bfae04580a37.png"
         label="Games"
         onDoubleClick={() => toggleWindow("games")}
@@ -351,26 +383,48 @@ const DesktopIconGrid = ({
       />
       <DesktopIcon
         icon="/lovable-uploads/b234211c-172f-4fb4-aa59-8aefbfecafa3.png"
+=======
+        icon="/icons/55e6bf6a-5595-4a49-adc9-bfae04580a37.png"
+        label="Games"
+        onDoubleClick={() => toggleWindow("games")}
+      />
+      <DesktopIcon
+        icon="/icons/b234211c-172f-4fb4-aa59-8aefbfecafa3.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Multimedia"
         onDoubleClick={() => toggleFolderWindow("multimedia")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/mirc.png"
+=======
+        icon="/icons/mirc.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Chat"
         onDoubleClick={() => toggleWindow("chat")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/winamp.png"
+=======
+        icon="/icons/winamp.png"
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Winamp"
         onDoubleClick={() => toggleWindow("winamp")}
       />
       <DesktopIcon
+<<<<<<< HEAD
         icon="/lovable-uploads/error.png"
         label="Modern Site"
         onDoubleClick={() => {
           navigate('/analytics-transition');
         }}
         data-tutorial-target="modern-site"
+=======
+        icon="/icons/error.png"
+        label="Modern Site"
+        onDoubleClick={() => setShowErrorMessage(true)}
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       />
 
       {/* Windows 95 style folder windows */}
@@ -506,7 +560,7 @@ const DesktopIconGrid = ({
               <span className="text-sm font-[system-ui]">Address:</span>
               <div className="flex-1 bg-white border border-[#808080] border-r-[#ffffff] border-b-[#ffffff] px-1 py-[2px] text-sm font-[system-ui]">
                 <div className="flex items-center">
-                  <img src="/lovable-uploads/ie_icon.png" alt="IE" className="w-4 h-4 mr-1" />
+                  <img src="/icons/ie_icon.png" alt="IE" className="w-4 h-4 mr-1" />
                   https://www.example.com
                 </div>
               </div>
@@ -514,7 +568,7 @@ const DesktopIconGrid = ({
 
             <div className="flex-1 p-4 bg-white min-h-[300px]">
               <div className="w-full h-full flex flex-col items-center justify-center">
-                <img src="/lovable-uploads/ie_large.png" alt="IE" className="w-16 h-16 mb-4" />
+                <img src="/icons/ie_large.png" alt="IE" className="w-16 h-16 mb-4" />
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-4 border-t-2 border-l-2 border-[#000080] animate-spin"></div>
                   <span className="text-sm font-[system-ui]">Loading...</span>
@@ -560,27 +614,27 @@ const DesktopIconGrid = ({
         >
           <div className="grid grid-cols-3 gap-2 p-2 bg-white min-h-[200px]">
             <div className={win95IconContainer}>
-              <img src="/lovable-uploads/movie_frame.png" alt="Video" className="w-8 h-8" />
+              <img src="/icons/movie_frame.png" alt="Video" className="w-8 h-8" />
               <span className={win95Label}>Movie.avi</span>
             </div>
             <div className={win95IconContainer}>
-              <img src="/lovable-uploads/audio.png" alt="Audio" className="w-8 h-8" />
+              <img src="/icons/audio.png" alt="Audio" className="w-8 h-8" />
               <span className={win95Label}>Music.wav</span>
             </div>
             <div className={win95IconContainer}>
-              <img src="/lovable-uploads/Cin_Film_Roll.png" alt="Video" className="w-8 h-8" />
+              <img src="/icons/Cin_Film_Roll.png" alt="Video" className="w-8 h-8" />
               <span className={win95Label}>Cinema.mpg</span>
             </div>
             <div className={win95IconContainer}>
-              <img src="/lovable-uploads/cine_film.png" alt="Film" className="w-8 h-8" />
+              <img src="/icons/cine_film.png" alt="Film" className="w-8 h-8" />
               <span className={win95Label}>Film.avi</span>
             </div>
             <div className={win95IconContainer}>
-              <img src="/lovable-uploads/film_roll.png" alt="Film Roll" className="w-8 h-8" />
+              <img src="/icons/film_roll.png" alt="Film Roll" className="w-8 h-8" />
               <span className={win95Label}>Movie.mkv</span>
             </div>
             <div className={win95IconContainer}>
-              <img src="/lovable-uploads/bear.png" alt="Animation" className="w-8 h-8" />
+              <img src="/icons/bear.png" alt="Animation" className="w-8 h-8" />
               <span className={win95Label}>Animation.gif</span>
             </div>
           </div>
@@ -595,6 +649,86 @@ const DesktopIconGrid = ({
         />
       )}
 
+<<<<<<< HEAD
+=======
+      {/* Error Message Window */}
+      {showWindows && showErrorMessage && (
+        <Win95FolderWindow
+          title="Error"
+          isOpen={true}
+          onClose={() => setShowErrorMessage(false)}
+          objectCount={1}
+        >
+          <div className="p-4 bg-white min-h-[100px]">
+            <div className="flex items-center gap-4 mb-4">
+              <img src="/icons/error.png" alt="Error" className="w-10 h-10" />
+              <p className="font-[system-ui] text-sm">Let's go into the future...</p>
+            </div>
+            <div className="flex justify-center">
+              <button
+                className={win95Button}
+                onClick={handleFirstErrorClose}
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </Win95FolderWindow>
+      )}
+
+      {/* Second Popup Window - Media Player */}
+      {showWindows && showSecondPopup && (
+        <Win95FolderWindow
+          title="Media Player"
+          isOpen={true}
+          onClose={() => setShowSecondPopup(false)}
+          objectCount={1}
+          style={{ width: '800px' }}
+        >
+          <div className="p-4 bg-white">
+            {/* Video Display Area */}
+            <div className="aspect-video bg-black flex items-center justify-center">
+              <div className="text-gray-500 font-[system-ui] text-sm">
+                [Video Display]
+              </div>
+            </div>
+
+            {/* Continue Button and Loading Bar */}
+            <div className="flex flex-col items-center gap-4 p-4 border-t border-[#808080]">
+              {isLoading && (
+                <div className="w-full h-6 bg-[#c0c0c0] border border-[#808080] border-r-[#ffffff] border-b-[#ffffff] relative overflow-hidden">
+                  <div 
+                    className="absolute inset-0 bg-[#000080] transition-transform duration-300 ease-out origin-left"
+                    style={{ transform: `scaleX(${loadingProgress / 100})` }}
+                  >
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-white text-xs font-[system-ui] whitespace-nowrap">
+                      Loading... {Math.round(loadingProgress)}%
+                    </span>
+                  </div>
+                </div>
+              )}
+              <button
+                className={`${win95Button} min-w-[120px] ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                onClick={handleContinue}
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-4 h-4 border-t-2 border-l-2 border-[#000080] animate-spin"></div>
+                    <span>Please wait...</span>
+                  </div>
+                ) : (
+                  'Continue'
+                )}
+              </button>
+            </div>
+          </div>
+        </Win95FolderWindow>
+      )}
+
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       {/* Add WebTV Window */}
       {showWindows && showWebTV && (
         <WebTV

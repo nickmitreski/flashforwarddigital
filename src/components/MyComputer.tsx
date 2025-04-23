@@ -4,10 +4,10 @@ import Win95Icon from './Win95Icon';
 
 // Windows 95 icon URLs
 const win95Icons = {
-  hardDrive: "https://win98icons.alexmeub.com/icons/png/hard_disk_drive-4.png",
-  floppyDrive: "https://win98icons.alexmeub.com/icons/png/floppy_drive-4.png",
-  controlPanel: "https://win98icons.alexmeub.com/icons/png/settings_gear-0.png",
-  printer: "https://win98icons.alexmeub.com/icons/png/printer-0.png",
+  hardDrive: "/lovable-uploads/hard_disk_drive-4.png",
+  floppyDrive: "/lovable-uploads/floppy_drive-4.png",
+  controlPanel: "/lovable-uploads/settings_gear-0.png",
+  printer: "/lovable-uploads/printer-0.png"
 };
 
 const MyComputer: React.FC = () => {

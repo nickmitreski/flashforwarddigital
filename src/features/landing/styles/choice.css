@@ -23,10 +23,17 @@
   --global--size: clamp(1.5rem, 3vw, 4rem);
   --anim--hover-time: 400ms;
   --anim--hover-ease: cubic-bezier(0.25, 1, 0.5, 1);
+<<<<<<< HEAD
   --charcoal: #111111;
   --text-shadow: rgba(0, 0, 0, 0.3);
   --hue: 320;
   --text: oklch(98% .1 var(--hue));
+=======
+  --charcoal: #2d2d2d;
+  --text-shadow: rgba(0, 0, 0, 0.15);
+  --hue: 320;
+  --text: oklch(85% .1 var(--hue));
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   --shadow: oklch(25% .2 var(--hue));
   --highlight: oklch(98% .05 var(--hue));
 }
@@ -46,7 +53,11 @@
   font-size: 7rem;
   font-weight: 900;
   letter-spacing: -0.05em;
+<<<<<<< HEAD
   color: #e9e9e9;
+=======
+  color: var(--charcoal);
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   text-transform: lowercase;
   text-shadow: 
     0 0.15ch 15px var(--text-shadow),
@@ -58,7 +69,11 @@
   font-family: "Meta", sans-serif;
   font-variation-settings: "wght" 900, "ital" 1;
   letter-spacing: -0.1em;
+<<<<<<< HEAD
   -webkit-text-stroke: 4px #e9e9e9;
+=======
+  -webkit-text-stroke: 4px var(--charcoal);
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   color: transparent;
   position: relative;
   cursor: pointer;
@@ -88,15 +103,25 @@
   font-size: var(--global--size);
   background: linear-gradient(
     -75deg,
+<<<<<<< HEAD
     rgba(17, 17, 17, 0.95),
     rgba(23, 23, 23, 0.98),
     rgba(17, 17, 17, 0.95)
+=======
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   );
   backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+<<<<<<< HEAD
   background-color: rgba(17, 17, 17, 1);
+=======
+  background-color: rgba(215, 215, 215, 1);
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -104,6 +129,7 @@
   position: relative;
 }
 
+<<<<<<< HEAD
 .choice-content {
   display: flex;
   flex-direction: column;
@@ -124,6 +150,8 @@
   margin-bottom: 1rem;
 }
 
+=======
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 .choice-buttons {
   display: flex;
   gap: 3rem;
@@ -158,7 +186,11 @@
   z-index: 0;
   inset: 0;
   border-radius: 999vw;
+<<<<<<< HEAD
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+=======
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
   height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
   top: calc(var(--shadow-cuttoff-fix) - 0.5em);
@@ -181,6 +213,7 @@
   z-index: 3;
   background: linear-gradient(
     -75deg,
+<<<<<<< HEAD
     rgba(23, 23, 23, 0.8),
     rgba(28, 28, 28, 0.9),
     rgba(23, 23, 23, 0.8)
@@ -191,6 +224,18 @@
     0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
     0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.2);
+=======
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: 999vw;
+  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+    0 0 0 0 rgba(255, 255, 255, 1);
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   backdrop-filter: blur(clamp(1px, 0.125em, 4px));
   transition: all var(--anim--hover-time) var(--anim--hover-ease);
 }
@@ -198,6 +243,7 @@
 .glass-button:hover {
   transform: scale(0.975);
   backdrop-filter: blur(0.01em);
+<<<<<<< HEAD
   box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.15),
     inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.2),
     0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.2),
@@ -211,6 +257,21 @@
 
 .glass-button-wrap:last-child .glass-button span {
   color: #e9019a;  /* Keep pink for modern button */
+=======
+  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
+    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
+    0 0 0 0 rgba(255, 255, 255, 1);
+}
+
+.glass-button-wrap:first-child .glass-button span {
+  color: #07bccc;  /* Cyan/light blue for retro button */
+}
+
+.glass-button-wrap:last-child .glass-button span {
+  color: #e9019a;  /* Pink for modern button */
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 }
 
 .glass-button span {
@@ -221,14 +282,22 @@
   letter-spacing: -0.05em;
   font-weight: 500;
   font-size: 0.85em;
+<<<<<<< HEAD
   text-shadow: 0em 0.15em 0.03em rgba(0, 0, 0, 0.2);
+=======
+  text-shadow: 0em 0.15em 0.03em rgba(0, 0, 0, 0.1);
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   transition: all var(--anim--hover-time) var(--anim--hover-ease);
   padding-inline: 1.25em;
   padding-block: 0.75em;
 }
 
 .glass-button:hover span {
+<<<<<<< HEAD
   text-shadow: 0.015em 0.015em 0.015em rgba(0, 0, 0, 0.25);
+=======
+  text-shadow: 0.015em 0.015em 0.015em rgba(0, 0, 0, 0.12);
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 }
 
 .glass-button span::after {
@@ -246,11 +315,19 @@
   background: linear-gradient(
     var(--angle-2),
     rgba(255, 255, 255, 0) 0%,
+<<<<<<< HEAD
     rgba(255, 255, 255, 0.1) 40% 50%,
     rgba(255, 255, 255, 0) 55%
   );
   z-index: 3;
   mix-blend-mode: overlay;
+=======
+    rgba(255, 255, 255, 0.5) 40% 50%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  z-index: 3;
+  mix-blend-mode: screen;
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   pointer-events: none;
   background-size: 200% 200%;
   background-position: 0% 50%;
@@ -274,6 +351,7 @@
   box-sizing: border-box;
   background: conic-gradient(
       from var(--angle-1) at 50% 50%,
+<<<<<<< HEAD
       rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0) 5% 40%,
       rgba(255, 255, 255, 0.2) 50%,
@@ -281,11 +359,24 @@
       rgba(255, 255, 255, 0.2)
     ),
     linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+=======
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0) 5% 40%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0) 60% 95%,
+      rgba(0, 0, 0, 0.5)
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   transition: all var(--anim--hover-time) var(--anim--hover-ease),
     --angle-1 500ms ease;
+<<<<<<< HEAD
   box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.3);
+=======
+  box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 }
 
 /* Background Grid */
@@ -294,7 +385,10 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+<<<<<<< HEAD
   background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 30px 30px;
   opacity: 0.5;
+=======
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 } 

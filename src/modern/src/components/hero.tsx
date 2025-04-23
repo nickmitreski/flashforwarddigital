@@ -1,5 +1,9 @@
 import { useRef } from 'react'
 import { ChevronRight } from 'lucide-react'
+<<<<<<< HEAD
+=======
+import bg3 from '../assets/backgrounds/hero-bg.png'
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 import { motion } from 'framer-motion'
 
 export function Hero() {
@@ -7,10 +11,15 @@ export function Hero() {
 
   return (
     <section ref={ref} id="hero" className="relative flex items-center justify-center min-h-screen overflow-hidden bg-gray-100 border-b border-[#008CFF]/30">
+<<<<<<< HEAD
       {/* Background Image */}
+=======
+      {/* Background Image - Parallax effect removed */}
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
         style={{ 
+<<<<<<< HEAD
           backgroundImage: `url(/backgrounds/hero-bg.png)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -19,6 +28,14 @@ export function Hero() {
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
+=======
+          backgroundImage: `url(${bg3})`
+        }}
+      />
+      {/* Dark overlay with scroll opacity animation - REMOVED */}
+      
+      {/* Gradient Background - REMOVED */}
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       
       <div className="relative z-[5] w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
@@ -85,6 +102,11 @@ export function Hero() {
             </button>
           </div>
         </div>
+<<<<<<< HEAD
+=======
+        
+        {/* Decorative Elements - REMOVED */}
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       </div>
     </section>
   )

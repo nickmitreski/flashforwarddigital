@@ -14,12 +14,12 @@ interface Channel {
 }
 
 const CHANNELS: Channel[] = [
-  { id: 1, name: "CNN News", file: "/videos/cnn.mov" },
-  { id: 2, name: "Full House", file: "/videos/fullhouse.mov" },
-  { id: 3, name: "Jeopardy", file: "/videos/jeopardy.mov" },
-  { id: 4, name: "MTV", file: "/videos/mtv.mov" },
-  { id: 5, name: "Dinosaurs", file: "/videos/dinosaurs.mov" },
-  { id: 6, name: "Weather", file: "/videos/weather.mov" }
+  { id: 1, name: "CNN News", file: "/videos/cnn.mp4" },
+  { id: 2, name: "Full House", file: "/videos/fullhouse.mp4" },
+  { id: 3, name: "Jeopardy", file: "/videos/jeopardy.mp4" },
+  { id: 4, name: "MTV", file: "/videos/mtv.mp4" },
+  { id: 5, name: "Dinosaurs", file: "/videos/dinosaurs.mp4" },
+  { id: 6, name: "Weather", file: "/videos/weather.mp4" }
 ];
 
 const WebTV: React.FC<WebTVProps> = ({ isOpen, onClose }) => {

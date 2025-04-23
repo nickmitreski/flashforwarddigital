@@ -25,6 +25,7 @@ export const ChoiceScreen: React.FC<ChoiceScreenProps> = ({ setShowChoiceScreen,
       <div className="dotted-grid" />
       
       <div className="choice-title">
+<<<<<<< HEAD
         <img src="/ffdig.svg" alt="FFdig" className="ffdig-logo" style={{ filter: 'brightness(0) invert(1)', width: '600px', marginBottom: '2rem' }} />
       </div>
       
@@ -46,6 +47,27 @@ export const ChoiceScreen: React.FC<ChoiceScreenProps> = ({ setShowChoiceScreen,
             </button>
             <div className="glass-button-shadow"></div>
           </div>
+=======
+        <div className="choice-title-start">choose your</div>
+        <div className="choice-title-end">JOURNEY</div>
+      </div>
+      
+      <div className="choice-buttons">
+        {/* Retro Button */}
+        <div className="glass-button-wrap">
+          <button className="glass-button" onClick={handleRetroChoice}>
+            <span>Let's go back in time</span>
+          </button>
+          <div className="glass-button-shadow"></div>
+        </div>
+
+        {/* Modern Button */}
+        <div className="glass-button-wrap">
+          <button className="glass-button" onClick={handleModernChoice}>
+            <span>Straight to business</span>
+          </button>
+          <div className="glass-button-shadow"></div>
+>>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         </div>
       </div>
     </div>
