@@ -183,7 +183,6 @@ const DesktopIconGrid = ({
     }
   };
 
-<<<<<<< HEAD
   const handleIconClick = (icon: string) => {
     soundPlayer.play('ding');
     // ... existing icon click logic ...
@@ -249,7 +248,7 @@ const DesktopIconGrid = ({
         statusText.textContent = 'Windows XP Update Ready to Install';
         if (progressBar) progressBar.style.width = '100%';
       }
-    }, 30);
+    }, 50);
 
     okButton?.addEventListener('click', () => {
       // Disable the buttons during installation
@@ -311,71 +310,40 @@ const DesktopIconGrid = ({
     <div className="grid grid-cols-2 gap-4 w-fit">
       <DesktopIcon
         icon="/lovable-uploads/95545d84-1015-4c18-8508-5625fd44954f.png"
-=======
-  return (
-    <div className="grid grid-cols-2 gap-4 w-fit">
-      <DesktopIcon
-        icon="/icons/95545d84-1015-4c18-8508-5625fd44954f.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="My Computer"
         onDoubleClick={() => toggleFolderWindow("computer")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/2baca9bf-b561-458e-8261-029c304a16a9.png"
-=======
-        icon="/icons/2baca9bf-b561-458e-8261-029c304a16a9.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Notepad"
         onDoubleClick={() => toggleFolderWindow("notepad")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/8e4189e0-c0c4-443d-9760-d907188d485a.png"
-=======
-        icon="/icons/8e4189e0-c0c4-443d-9760-d907188d485a.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Recycle Bin"
         onDoubleClick={() => toggleFolderWindow("recyclebin")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/7ad41ea0-8483-4e73-a800-0692685088a3.png"
-=======
-        icon="/icons/7ad41ea0-8483-4e73-a800-0692685088a3.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Internet Explorer"
         onDoubleClick={() => toggleFolderWindow("explorer")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/85716acf-aa1b-47c6-a710-e67220339c76.png"
-=======
-        icon="/icons/85716acf-aa1b-47c6-a710-e67220339c76.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="My Documents"
         onDoubleClick={() => toggleFolderWindow("documents")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/webtv.png"
-=======
-        icon="/icons/webtv.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="WebTV"
         onDoubleClick={() => handleToggleWindow("webtv")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/32551a2e-31f6-4695-9ed8-3abfa3946bf8.png"
-=======
-        icon="/icons/32551a2e-31f6-4695-9ed8-3abfa3946bf8.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="MS Paint"
         onDoubleClick={() => toggleWindow("paint")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/55e6bf6a-5595-4a49-adc9-bfae04580a37.png"
         label="Games"
         onDoubleClick={() => toggleWindow("games")}
@@ -383,48 +351,26 @@ const DesktopIconGrid = ({
       />
       <DesktopIcon
         icon="/lovable-uploads/b234211c-172f-4fb4-aa59-8aefbfecafa3.png"
-=======
-        icon="/icons/55e6bf6a-5595-4a49-adc9-bfae04580a37.png"
-        label="Games"
-        onDoubleClick={() => toggleWindow("games")}
-      />
-      <DesktopIcon
-        icon="/icons/b234211c-172f-4fb4-aa59-8aefbfecafa3.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Multimedia"
         onDoubleClick={() => toggleFolderWindow("multimedia")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/mirc.png"
-=======
-        icon="/icons/mirc.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Chat"
         onDoubleClick={() => toggleWindow("chat")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/winamp.png"
-=======
-        icon="/icons/winamp.png"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
         label="Winamp"
         onDoubleClick={() => toggleWindow("winamp")}
       />
       <DesktopIcon
-<<<<<<< HEAD
         icon="/lovable-uploads/error.png"
         label="Modern Site"
         onDoubleClick={() => {
           navigate('/analytics-transition');
         }}
         data-tutorial-target="modern-site"
-=======
-        icon="/icons/error.png"
-        label="Modern Site"
-        onDoubleClick={() => setShowErrorMessage(true)}
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       />
 
       {/* Windows 95 style folder windows */}
@@ -598,7 +544,7 @@ const DesktopIconGrid = ({
             </div>
             <div className={win95IconContainer}>
               <img src={win95Icons.folder} alt="Folder" className="w-8 h-8" />
-              <span className="text-sm font-[system-ui]">Personal</span>
+              <span className={win95Label}>Personal</span>
             </div>
           </div>
         </Win95FolderWindow>
@@ -649,8 +595,6 @@ const DesktopIconGrid = ({
         />
       )}
 
-<<<<<<< HEAD
-=======
       {/* Error Message Window */}
       {showWindows && showErrorMessage && (
         <Win95FolderWindow
@@ -728,7 +672,6 @@ const DesktopIconGrid = ({
         </Win95FolderWindow>
       )}
 
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       {/* Add WebTV Window */}
       {showWindows && showWebTV && (
         <WebTV
