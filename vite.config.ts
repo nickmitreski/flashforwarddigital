@@ -39,7 +39,6 @@ export default defineConfig(({ mode }) => ({
     },
     assetsDir: 'assets',
     copyPublicDir: true,
-<<<<<<< HEAD
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 1000,
     sourcemap: mode === 'development',
@@ -49,18 +48,12 @@ export default defineConfig(({ mode }) => ({
         drop_console: mode === 'production',
       },
     },
-=======
     emptyOutDir: true
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom']
   },
   publicDir: 'public',
-<<<<<<< HEAD
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
-  base: '/',
-=======
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg']
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
+  base: '/'
 }));
