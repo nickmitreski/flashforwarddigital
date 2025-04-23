@@ -1,31 +1,13 @@
 {
-<<<<<<< HEAD
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/lovable-uploads/(.*)",
-      "dest": "/lovable-uploads/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "public": true
-=======
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "public": true,
   "rewrites": [
+    {
+      "source": "/lovable-uploads/(.*)",
+      "destination": "/lovable-uploads/$1"
+    },
     {
       "source": "/icons/:path*",
       "destination": "/icons/:path*"
@@ -59,5 +41,4 @@
       ]
     }
   ]
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 } 
