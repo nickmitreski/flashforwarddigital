@@ -1,11 +1,8 @@
 import React, { useRef, useCallback } from "react";
 import { X, Minus, Square } from "lucide-react";
 import { BaseProps, MouseHandler, WindowEventHandlers } from "../types";
-import { WINDOW_ANIMATION, RETRO_COLORS } from "../constants/retro-theme";
-<<<<<<< HEAD
+import { RETRO_COLORS } from "../constants/retro-theme";
 import soundPlayer from "@/utils/sounds";
-=======
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 
 interface Win98WindowProps extends BaseProps {
   title: string;
@@ -65,7 +62,6 @@ const Win98Window: React.FC<Win98WindowProps> = ({
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
   }, [isMaximized]);
-<<<<<<< HEAD
 
   const handleClose = () => {
     soundPlayer.play('error');
@@ -82,11 +78,9 @@ const Win98Window: React.FC<Win98WindowProps> = ({
     onMaximize?.();
   };
 
-  const handleMouseDownBase = (e: React.MouseEvent) => {
+  const handleMouseDownBase = (e: React.MouseEvent<HTMLDivElement>) => {
     handleMouseDown(e);
   };
-=======
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 
   if (!isOpen) return null;
 
@@ -116,11 +110,7 @@ const Win98Window: React.FC<Win98WindowProps> = ({
                 <div className="flex gap-[2px]">
                   {onMinimize && (
                     <button
-<<<<<<< HEAD
                       onClick={handleMinimize}
-=======
-                      onClick={onMinimize}
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
                       className="win98-button w-[16px] h-[14px]"
                       aria-label="Minimize"
                     >
@@ -129,11 +119,7 @@ const Win98Window: React.FC<Win98WindowProps> = ({
                   )}
                   {onMaximize && (
                     <button
-<<<<<<< HEAD
                       onClick={handleMaximize}
-=======
-                      onClick={onMaximize}
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
                       className="win98-button w-[16px] h-[14px]"
                       aria-label="Maximize"
                     >
@@ -141,11 +127,7 @@ const Win98Window: React.FC<Win98WindowProps> = ({
                     </button>
                   )}
                   <button
-<<<<<<< HEAD
                     onClick={handleClose}
-=======
-                    onClick={onClose}
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
                     className="win98-button w-[16px] h-[14px] hover:bg-red-600 hover:text-white"
                     aria-label="Close"
                   >

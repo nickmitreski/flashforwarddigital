@@ -1,9 +1,5 @@
 // src/components/DesktopIcon.tsx
-<<<<<<< HEAD
 import React, { useState } from "react";
-=======
-import React from "react";
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 import { BaseProps, MouseHandler } from "../types";
 
 interface DesktopIconProps extends BaseProps {
@@ -16,10 +12,7 @@ interface DesktopIconProps extends BaseProps {
     x: number;
     y: number;
   };
-<<<<<<< HEAD
   'data-tutorial-target'?: string;
-=======
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 }
 
 const DesktopIcon: React.FC<DesktopIconProps> = ({
@@ -31,7 +24,6 @@ const DesktopIcon: React.FC<DesktopIconProps> = ({
   position,
   className = "",
   style,
-<<<<<<< HEAD
   'data-tutorial-target': dataTutorialTarget,
   ...props
 }) => {
@@ -40,10 +32,6 @@ const DesktopIcon: React.FC<DesktopIconProps> = ({
   // Fallback icon for when the main icon fails to load
   const fallbackIcon = "/lovable-uploads/error.png";
   
-=======
-  ...props
-}) => {
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
   return (
     <div
       className={`inline-flex flex-col items-center p-2 cursor-pointer ${
@@ -58,10 +46,7 @@ const DesktopIcon: React.FC<DesktopIconProps> = ({
           top: `${position.y}px`,
         }),
       }}
-<<<<<<< HEAD
       data-tutorial-target={dataTutorialTarget}
-=======
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       {...props}
     >
       <img 

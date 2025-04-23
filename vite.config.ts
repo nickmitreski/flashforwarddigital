@@ -29,6 +29,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -37,12 +39,11 @@ export default defineConfig(({ mode }) => ({
         }
       }
     },
-    assetsDir: 'assets',
     copyPublicDir: true,
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 1000,
     sourcemap: mode === 'development',
-    minify: mode === 'production' ? 'terser' : false,
+    minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: mode === 'production',
@@ -55,5 +56,5 @@ export default defineConfig(({ mode }) => ({
   },
   publicDir: 'public',
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
-  base: '/'
+  base: './'
 }));
