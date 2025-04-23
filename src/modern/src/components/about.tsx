@@ -1,10 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { ChevronRight, Award, Users, Target, Zap, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-<<<<<<< HEAD
 import { BrandingPopup, ContentPopup, AIPopup } from './ServicePopups'
-=======
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 
 const values = [
   {
@@ -39,13 +36,8 @@ const values = [
     title: 'Content That Engages',
     description: 'Compelling content strategies that tell your story and drive meaningful engagement with your target market.',
     icon: Target,
-<<<<<<< HEAD
     color: 'text-[#FF1493]',
     gradient: 'from-[#FF1493] via-[#FF1493] to-[#FF1493]',
-=======
-    color: 'text-pink-400',
-    gradient: 'from-pink-400 via-fuchsia-500 to-pink-600',
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
     id: 'content',
     features: [
       'Content Strategy',
@@ -72,7 +64,6 @@ const values = [
 
 export function About() {
   const containerRef = useRef<HTMLDivElement>(null)
-<<<<<<< HEAD
   const [activePopup, setActivePopup] = useState<string | null>(null)
 
   const handlePopupOpen = (id: string) => {
@@ -82,8 +73,6 @@ export function About() {
   const handlePopupClose = () => {
     setActivePopup(null)
   }
-=======
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 
   return (
     <section id="about" className="relative py-24 border-t border-b border-[#008CFF]/30 bg-black">
@@ -127,11 +116,7 @@ export function About() {
           >
             We specialise in creating custom-tailored digital experiences that don't just grab attention — they{' '}
             <span className="text-yellow-400">hold it hostage</span>. Whether it's web design & development, branding, AI automation, or content creation, we make sure you{' '}
-<<<<<<< HEAD
             <span className="text-[#FF1493]">stand out</span>{' '}
-=======
-            <span className="text-pink-400">stand out</span>{' '}
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
             in a sea of sameness.
           </motion.p>
 
@@ -176,7 +161,6 @@ export function About() {
                       {value.description}
                     </p>
                     <div 
-<<<<<<< HEAD
                       className={`mt-6 relative inline-flex items-center justify-center px-6 py-2 rounded-full overflow-hidden bg-gradient-to-r ${value.gradient} cursor-pointer`}
                       onClick={() => {
                         if (value.id === 'websites') {
@@ -192,14 +176,7 @@ export function About() {
                          value.id === 'branding' ? 'Take A Look' :
                          value.id === 'content' ? 'Show More' :
                          value.id === 'ai' ? 'Explore' : 'Learn More'}
-=======
-                      className={`mt-6 relative inline-flex items-center justify-center px-6 py-2 rounded-full overflow-hidden bg-gradient-to-r ${value.gradient}`}
-                    >
-                      <div className="absolute inset-0 bg-black/20" />
-                      <span className="relative text-white font-medium flex items-center">
-                        Learn More
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
-                        <ChevronRight className="ml-2 h-4 w-4" />
+                        <ChevronRight className="w-4 h-4 ml-1" />
                       </span>
                     </div>
                   </div>
@@ -210,58 +187,17 @@ export function About() {
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          className="absolute -top-1/4 left-1/4 w-96 h-96 bg-[#4f2d99]/5 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{ 
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div 
-          className="absolute -bottom-1/4 right-1/4 w-96 h-96 bg-[#7b2dbd]/5 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{ 
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      </div>
-
-      {/* Add popups at the end of the section */}
-      <BrandingPopup
-        isOpen={activePopup === 'branding'}
-        onClose={handlePopupClose}
-        title="Strategic Branding"
-        color="text-yellow-400"
-        gradient="from-yellow-400 via-amber-500 to-orange-400"
-      />
-
-      <ContentPopup
-        isOpen={activePopup === 'content'}
-        onClose={handlePopupClose}
-        title="Content That Engages"
-        color="text-[#FF1493]"
-        gradient="from-[#FF1493] via-[#FF1493] to-[#FF1493]"
-      />
-
-      <AIPopup
-        isOpen={activePopup === 'ai'}
-        onClose={handlePopupClose}
-        title="AI-Powered Growth"
-        color="text-emerald-400"
-        gradient="from-emerald-400 via-teal-500 to-cyan-600"
-      />
+      <AnimatePresence>
+        {activePopup === 'branding' && (
+          <BrandingPopup onClose={handlePopupClose} />
+        )}
+        {activePopup === 'content' && (
+          <ContentPopup onClose={handlePopupClose} />
+        )}
+        {activePopup === 'ai' && (
+          <AIPopup onClose={handlePopupClose} />
+        )}
+      </AnimatePresence>
     </section>
   )
 } 

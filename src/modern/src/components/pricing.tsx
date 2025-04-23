@@ -1,10 +1,6 @@
 import { Check, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-<<<<<<< HEAD
-=======
-import bg3 from '../assets/backgrounds/hero-bg.png'
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 
 const plans = [
   {
@@ -57,13 +53,8 @@ const plans = [
       '6 Months Support',
       'Custom Analytics',
     ],
-<<<<<<< HEAD
     color: 'text-emerald-400',
     gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
-=======
-    color: 'text-pink-400',
-    gradient: 'from-pink-400 via-fuchsia-500 to-pink-600',
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
     highlighted: false,
   },
 ]
@@ -73,17 +64,11 @@ export function Pricing() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
 
   return (
-<<<<<<< HEAD
     <section id="pricing" className="relative py-32 overflow-hidden">
       {/* Background Image */}
-=======
-    <section id="pricing" className="relative py-24 bg-gray-100">
-      {/* Background Image - Fixed effect removed */}
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
         style={{ 
-<<<<<<< HEAD
           backgroundImage: `url(/backgrounds/hero-bg.png)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -93,13 +78,6 @@ export function Pricing() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
-=======
-          backgroundImage: `url(${bg3})`
-        }}
-      />
-      {/* Dark overlay - REMOVED */}
-      
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4 text-3xl font-light text-white/90 max-w-5xl mx-auto text-center">
           <motion.p 
@@ -200,89 +178,41 @@ export function Pricing() {
                     className="flex items-baseline mb-6"
                     style={{ transform: "translateZ(20px)" }}
                   >
-                    <span className="text-4xl font-medium text-white">${plan.price}</span>
-                    <span className="ml-2 text-white/60">/project</span>
+                    <span className="text-5xl font-light text-white">${plan.price}</span>
+                    <span className="ml-2 text-gray-400">/project</span>
                   </motion.div>
                   <motion.p 
-                    className="text-white/80 mb-8"
+                    className="text-gray-400 mb-8"
                     style={{ transform: "translateZ(20px)" }}
                   >
                     {plan.description}
                   </motion.p>
-                  
                   <motion.ul 
                     className="space-y-4 mb-8"
                     style={{ transform: "translateZ(20px)" }}
                   >
-                    {plan.features.map((feature, featureIndex) => (
-                      <motion.li 
-                        key={feature} 
-                        className="flex items-start"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 + featureIndex * 0.1 }}
-                        whileHover={{ x: 5 }}
-                      >
-                        <Check className={`w-5 h-5 ${plan.color} mr-3 mt-0.5 flex-shrink-0`} />
-                        <span className="text-white/80">{feature}</span>
-                      </motion.li>
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-center text-gray-300">
+                        <Check className="h-5 w-5 mr-3 text-green-400" />
+                        {feature}
+                      </li>
                     ))}
                   </motion.ul>
-                  
-                  <motion.button 
-                    className={`shiny-cta w-full bg-gradient-to-r ${plan.gradient}`}
+                  <motion.button
+                    className={`w-full flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r ${plan.gradient} text-white font-medium`}
+                    style={{ transform: "translateZ(20px)" }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    style={{ transform: "translateZ(30px)" }}
                   >
-                    <span>Get Started</span>
+                    Get Started
+                    <ChevronRight className="ml-2 h-5 w-5" />
                   </motion.button>
                 </div>
-
-                {selectedPlan === plan.name && (
-                  <motion.div
-                    className="absolute inset-0 bg-[#008CFF]/5 rounded-2xl"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    style={{ transform: "translateZ(-20px)" }}
-                  />
-                )}
               </motion.div>
-
-              {/* Floating elements around the card - REMOVED */}
             </motion.div>
           ))}
         </div>
-        
-        {/* Custom Solutions Section */}
-        <motion.div 
-          className="mt-24 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.p 
-            className="text-3xl font-light text-white/90 mb-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            Need a{' '}
-            <span className="text-[#008CFF]">custom solution</span>?{' '}
-            Let's talk.
-          </motion.p>
-          <motion.button 
-            className="shiny-cta"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span>Contact Us</span>
-          </motion.button>
-        </motion.div>
       </div>
-
-      {/* Decorative Elements - REMOVED */}
     </section>
   )
 }

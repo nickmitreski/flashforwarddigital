@@ -1,12 +1,8 @@
 import { ChevronRight, X } from 'lucide-react'
 import { motion, useScroll, useTransform, AnimatePresence, useSpring, useMotionValue } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-<<<<<<< HEAD
 import { PortfolioPopup } from './PortfolioPopup'
 import { BrandingModal, ContentModal, AIModal } from './ServiceModals'
-=======
-import bg2 from '../assets/backgrounds/services-bg.png'
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 
 interface ModalProps {
   isOpen: boolean
@@ -275,13 +271,8 @@ const services = [
   {
     title: 'Content That Converts',
     description: 'Compelling content strategies that drive engagement and conversions.',
-<<<<<<< HEAD
     color: 'text-[#FF1493]',
     gradient: 'from-[#FF1493] via-[#FF1493] to-[#FF1493]',
-=======
-    color: 'text-pink-400',
-    gradient: 'from-pink-400 via-fuchsia-500 to-pink-600',
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
     id: 'content',
     features: [
       'Content Strategy',
@@ -331,7 +322,6 @@ const services = [
   },
 ]
 
-<<<<<<< HEAD
 export default function Services() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -384,23 +374,6 @@ export default function Services() {
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
-=======
-export function Services() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  return (
-    <section id="services" className="relative py-24 overflow-hidden bg-gray-100 border-t border-b border-[#008CFF]/30">
-      {/* Background Image - Fixed effect removed */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: `url(${bg2})`
-        }}
-      />
-      {/* Dark overlay - REMOVED */}
-      
-      {/* Gradient Background - REMOVED */}
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -454,21 +427,9 @@ export function Services() {
                 viewport={{ once: true }}
               >
                 <div className="w-full text-left">
-<<<<<<< HEAD
                   <div 
                     className="relative bg-gray-950/50 backdrop-blur-sm rounded-2xl p-8 h-full border hover:border-2 transition-all duration-300 group cursor-pointer"
                     onClick={() => handleServiceClick(service.id)}
-=======
-                  <div className="relative bg-gray-950/50 backdrop-blur-sm rounded-2xl p-8 h-full border hover:border-2 transition-all duration-300 group"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
-                    style={{
-                      borderColor: service.id === 'web_design' ? 'rgba(0, 140, 255, 0.3)' :
-                                 service.id === 'branding' ? 'rgba(250, 204, 21, 0.3)' :
-                                 service.id === 'content' ? 'rgba(248, 113, 113, 0.3)' :
-                                 service.id === 'ai' ? 'rgba(52, 211, 153, 0.3)' :
-                                 service.id === 'marketing' ? 'rgba(123, 45, 189, 0.3)' :
-                                 service.id === 'performance' ? 'rgba(250, 204, 21, 0.3)' : 'rgba(0, 140, 255, 0.3)'
-                    }}
                   >
                     <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
                     
