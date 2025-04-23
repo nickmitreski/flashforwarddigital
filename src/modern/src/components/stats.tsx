@@ -30,11 +30,7 @@ const statsData: StatsData = {
       label: "AI Implementation",
       description: "Percentage of businesses reporting increased efficiency after implementing AI solutions in their digital strategy.",
       suffix: "%",
-<<<<<<< HEAD
       colorClass: "from-[#FF1493] via-[#FF1493] to-[#FF1493]"
-=======
-      colorClass: "from-pink-400 via-pink-500 to-pink-600"
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
     },
     {
       value: 73,
@@ -59,11 +55,7 @@ export function Stats() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-<<<<<<< HEAD
               <span className="text-[#008CFF]">Elevate</span> Your Digital <span className="text-[#FF1493]">Presence</span>{' '}
-=======
-              <span className="text-[#008CFF]">Elevate</span> Your Digital <span className="text-pink-400">Presence</span>{' '}
->>>>>>> 32603a7d2d85d011e99b8ec884c4ddbe07708848
               that drives growth.
             </motion.p>
 
