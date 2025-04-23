@@ -1,9 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
+import fs from 'fs';
+import path from 'path';
+import { glob } from 'glob';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Find all icon references in the codebase
-const iconReferences = glob.sync('src/**/*.{ts,tsx,js,jsx}', { ignore: ['**/node_modules/**'] })
+const iconReferences = (await glob('src/**/*.{ts,tsx,js,jsx}', { ignore: ['**/node_modules/**'] }))
   .reduce((refs, file) => {
     const content = fs.readFileSync(file, 'utf8');
     const matches = content.match(/\/lovable-uploads\/[^"'\s)]+/g) || [];
