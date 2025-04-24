@@ -56,5 +56,5 @@ export default defineConfig(({ mode }) => ({
   },
   publicDir: 'public',
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
-  base: './'
+  base: '/'
 }));
