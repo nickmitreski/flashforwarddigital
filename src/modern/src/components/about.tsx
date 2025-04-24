@@ -47,8 +47,8 @@ const values = [
     ]
   },
   {
-    title: 'AI-Powered Growth',
-    description: 'Leverage cutting-edge AI technology to automate processes and accelerate your business growth.',
+    title: 'Custom AI Solutions',
+    description: 'Harness the power of artificial intelligence with custom-built solutions tailored to your unique business needs and goals.',
     icon: Zap,
     color: 'text-emerald-400',
     gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
@@ -189,13 +189,25 @@ export function About() {
 
       <AnimatePresence>
         {activePopup === 'branding' && (
-          <BrandingPopup onClose={handlePopupClose} />
+          <BrandingPopup 
+            isOpen={true} 
+            onClose={handlePopupClose} 
+            title="Strategic Branding" 
+          />
         )}
         {activePopup === 'content' && (
-          <ContentPopup onClose={handlePopupClose} />
+          <ContentPopup 
+            isOpen={true} 
+            onClose={handlePopupClose} 
+            title="Content That Engages" 
+          />
         )}
         {activePopup === 'ai' && (
-          <AIPopup onClose={handlePopupClose} />
+          <AIPopup 
+            isOpen={true} 
+            onClose={handlePopupClose} 
+            title="Custom AI Solutions" 
+          />
         )}
       </AnimatePresence>
     </section>
