@@ -36,6 +36,7 @@ const App = () => {
               <Route path="/" element={<Index />} />
               <Route path="/analytics-transition" element={<AnalyticsTransition />} />
               <Route path="/modern/*" element={<ModernApp />} />
+              <Route path="/windows-xp/*" element={<ModernApp />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
