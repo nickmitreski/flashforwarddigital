@@ -20,9 +20,10 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
           onClick={onClose}
         >
           <motion.div 
-            className="relative w-full max-w-5xl max-h-[85vh] overflow-y-auto rounded-[20px] bg-white/5 backdrop-blur-lg border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]"
+            className="relative w-full max-w-5xl max-h-[85vh] overflow-y-auto rounded-[20px] bg-black/10 backdrop-blur-lg border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]"
             style={{
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+              background: 'linear-gradient(135deg, rgba(18,18,18,0.8), rgba(18,18,18,0.9))',
+              backdropFilter: 'blur(10px)',
             }}
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -32,7 +33,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
             {/* Close button */}
             <button 
               onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:text-white/80 transition-colors z-10 bg-white/5 backdrop-blur-xl rounded-full p-2 border border-white/10"
+              className="absolute top-4 right-4 text-white hover:text-white/80 transition-colors z-10 bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/10"
             >
               <X className="w-6 h-6" />
             </button>
@@ -47,7 +48,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
             <div className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Logo Design & Development */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-yellow-500 to-amber-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -62,7 +63,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Print Materials */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-red-500 to-orange-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,7 +78,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Brand Photography & Art Direction */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-fuchsia-500 to-violet-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -93,7 +94,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Digital Marketing Assets */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-indigo-500 to-blue-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -108,7 +109,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Brand Style Guide */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-purple-500 to-violet-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -123,7 +124,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Visual Asset Creation */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-pink-500 to-rose-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -138,7 +139,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Brand Experience Design */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -153,7 +154,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Motion & Animation */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-green-500 to-emerald-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -169,7 +170,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Event Branding */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-violet-500 to-purple-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -184,7 +185,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Product Branding */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-amber-500 to-yellow-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -199,7 +200,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Corporate Identity */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-teal-500 to-cyan-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -214,7 +215,7 @@ export function BrandingPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Trademark & Legal */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-rose-500 to-pink-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -249,9 +250,10 @@ export function ContentPopup({ isOpen, onClose, title }: ServicePopupProps) {
           onClick={onClose}
         >
           <motion.div 
-            className="relative w-full max-w-5xl max-h-[85vh] overflow-y-auto rounded-[20px] bg-white/5 backdrop-blur-lg border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]"
+            className="relative w-full max-w-5xl max-h-[85vh] overflow-y-auto rounded-[20px] bg-black/10 backdrop-blur-lg border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]"
             style={{
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+              background: 'linear-gradient(135deg, rgba(18,18,18,0.8), rgba(18,18,18,0.9))',
+              backdropFilter: 'blur(10px)',
             }}
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -261,7 +263,7 @@ export function ContentPopup({ isOpen, onClose, title }: ServicePopupProps) {
             {/* Close button */}
             <button 
               onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:text-white/80 transition-colors z-10 bg-white/5 backdrop-blur-xl rounded-full p-2 border border-white/10"
+              className="absolute top-4 right-4 text-white hover:text-white/80 transition-colors z-10 bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/10"
             >
               <X className="w-6 h-6" />
             </button>
@@ -298,9 +300,10 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
           onClick={onClose}
         >
           <motion.div 
-            className="relative w-full max-w-5xl max-h-[85vh] overflow-y-auto rounded-[20px] bg-white/5 backdrop-blur-lg border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]"
+            className="relative w-full max-w-5xl max-h-[85vh] overflow-y-auto rounded-[20px] bg-black/10 backdrop-blur-lg border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]"
             style={{
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+              background: 'linear-gradient(135deg, rgba(18,18,18,0.8), rgba(18,18,18,0.9))',
+              backdropFilter: 'blur(10px)',
             }}
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -310,7 +313,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
             {/* Close button */}
             <button 
               onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:text-white/80 transition-colors z-10 bg-white/5 backdrop-blur-xl rounded-full p-2 border border-white/10"
+              className="absolute top-4 right-4 text-white hover:text-white/80 transition-colors z-10 bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/10"
             >
               <X className="w-6 h-6" />
             </button>
@@ -325,7 +328,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
             <div className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Business Process Automation */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -340,7 +343,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Social Media Growth */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-pink-500 to-purple-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -355,7 +358,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* SEO Optimization */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-orange-500 to-amber-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -370,7 +373,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* AI Market Analyzer */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-green-500 to-emerald-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -385,7 +388,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Predictive Analytics */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-indigo-500 to-blue-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -400,7 +403,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* AI Content Generator */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-yellow-500 to-orange-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -415,7 +418,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Multilingual AI Translator */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-purple-500 to-violet-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -430,7 +433,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* AI Ad Campaign Manager */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-red-500 to-rose-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -446,7 +449,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Social Media AI Assistant */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-cyan-500 to-teal-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -461,7 +464,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Dynamic Pricing Engine */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-emerald-500 to-green-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -476,7 +479,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* AI Security Guardian */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-blue-500 to-indigo-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -491,7 +494,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Smart Document Processor */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-violet-500 to-purple-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -506,7 +509,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* AI Research Assistant */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-amber-500 to-yellow-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -521,7 +524,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Support Quality Analyzer */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-pink-500 to-rose-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -536,7 +539,7 @@ export function AIPopup({ isOpen, onClose, title }: ServicePopupProps) {
                 </div>
 
                 {/* Smart Data Cleansing */}
-                <div className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-all hover:bg-white/10">
+                <div className="group relative rounded-xl border border-white/10 bg-black/30 p-6 backdrop-blur-lg transition-all hover:bg-black/40">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-gradient-to-br from-teal-500 to-cyan-400 p-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
