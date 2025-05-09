@@ -1,7 +1,7 @@
 # Include all files in public directory
 # This ensures all static assets are included in the deployment
 !public/**/*
-!public/lovable-uploads/**/*
+!public/lovable-uploads/**/* 
 .git
 node_modules
 .env

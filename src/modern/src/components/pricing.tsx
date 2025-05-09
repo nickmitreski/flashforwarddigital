@@ -198,7 +198,7 @@ export function Pricing() {
                       </li>
                     ))}
                   </motion.ul>
-                  <motion.button
+                  <motion.button 
                     className={`w-full flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r ${plan.gradient} text-white font-medium`}
                     style={{ transform: "translateZ(20px)" }}
                     whileHover={{ scale: 1.05 }}

@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Outlet } from 'react-router-dom'
 import { Chatbot } from './Chatbot'
 import { MAIN_NAVIGATION } from '../constants/navigation'
+import { Footer } from './Footer'
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const navigate = useNavigate()
@@ -89,10 +90,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </nav>
       </header>
 
-      <main className="w-full">{children}</main>
+      <main className="w-full">
+        <Outlet />
+      </main>
 
       {/* Add Chatbot */}
       <Chatbot />
+
+      <Footer />
     </div>
   )
 } 

@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { ChevronRight, Award, Users, Target, Zap, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BrandingPopup, ContentPopup, AIPopup } from './ServicePopups'
+import { ServicePopups } from './ServicePopups'
 
 const values = [
   {
@@ -188,27 +188,12 @@ export function About() {
       </div>
 
       <AnimatePresence>
-        {activePopup === 'branding' && (
-          <BrandingPopup 
-            isOpen={true} 
-            onClose={handlePopupClose} 
-            title="Strategic Branding" 
-          />
-        )}
-        {activePopup === 'content' && (
-          <ContentPopup 
-            isOpen={true} 
-            onClose={handlePopupClose} 
-            title="Content That Engages" 
-          />
-        )}
-        {activePopup === 'ai' && (
-          <AIPopup 
-            isOpen={true} 
-            onClose={handlePopupClose} 
-            title="Custom AI Solutions" 
-          />
-        )}
+        <ServicePopups
+          isBrandingOpen={activePopup === 'branding'}
+          isContentOpen={activePopup === 'content'}
+          isAIOpen={activePopup === 'ai'}
+          onClose={handlePopupClose}
+        />
       </AnimatePresence>
     </section>
   )
